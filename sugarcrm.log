@@ -450,3 +450,28 @@ Mon May  4 03:09:38 2015 [10086][-none-][FATAL] Configuration variable date.time
 Mon May  4 11:33:15 2015 [2344][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
 Mon May  4 11:33:15 2015 [2344][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
 Mon May  4 11:33:15 2015 [10086][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:18:15 2015 [7458][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:18:15 2015 [7458][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:18:33 2015 [29945][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:18:33 2015 [29945][-none-][FATAL] SECURITY: User authentication for mars failed
+Fri May  8 13:18:33 2015 [29945][-none-][FATAL] FAILED LOGIN:attempts[1] - mars
+Fri May  8 13:18:33 2015 [29945][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:18:40 2015 [29947][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:18:40 2015 [29947][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:19:37 2015 [9982][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:55:50 2015 [10079][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:55:51 2015 [29945][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:56:03 2015 [29947][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:56:15 2015 [29953][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:56:15 2015 [29945][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:56:21 2015 [7458][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 13:56:22 2015 [7458][1][FATAL] Missing relationship definition contact_aos_quotes. skipping contact_aos_quotes subpanel
+Fri May  8 13:56:22 2015 [7458][1][FATAL] Missing relationship definition contact_aos_invoices. skipping contact_aos_invoices subpanel
+Fri May  8 13:56:22 2015 [7458][1][FATAL] Missing relationship definition contact_aos_contracts. skipping contact_aos_contracts subpanel
+Fri May  8 14:23:46 2015 [7583][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 14:23:46 2015 [7583][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 14:23:46 2015 [29945][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 16:04:51 2015 [29947][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 16:04:51 2015 [29947][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 16:05:02 2015 [29953][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
+Fri May  8 16:05:02 2015 [29953][-none-][FATAL] Configuration variable date.timezone is not set, guessed timezone Europe/Berlin. Please set date.timezone="Europe/Berlin" in php.ini!
