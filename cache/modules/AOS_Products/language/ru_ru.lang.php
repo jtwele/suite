@@ -1,5 +1,5 @@
 <?php
-// created: 2015-04-27 12:52:12
+// created: 2015-05-18 14:28:41
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Дата создания',
@@ -42,4 +42,7 @@ $mod_strings = array (
   'LBL_PRODUCT_IMAGE' => 'Фото товара',
   'LBL_IMAGE_UPLOAD_FAIL' => 'ОШИБКА:  размер загружаемого файла превышает максимально допустимое значение, равное ',
   'LBL_AOS_PRODUCT_CATEGORYS_NAME' => 'Категория товара',
+  'LBL_AMOUNT' => 'Amount',
+  'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_CONTACTS_TITLE' => 'Contacts',
+  'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_CONTACTS_TITLE' => 'Contacts',
 );

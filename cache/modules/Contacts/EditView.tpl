@@ -435,7 +435,7 @@ SUGAR.util.doWhen(
 </td>
 {counter name="fieldsUsed"}
 
-<td valign="top" width='37.5%' >
+<td valign="top" width='37.5%' colspan='3'>
 {counter name="panelFieldCount"}
 
 {if empty($fields.description.value)}
@@ -448,12 +448,6 @@ rows="6"
 cols="80" 
 title='' tabindex="0" 
  >{$value}</textarea>
-<td valign="top" id='aop_case_updates_contacts_1_name_label' width='12.5%' scope="col">
-&nbsp;
-</td>
-{counter name="fieldsUsed"}
-
-<td valign="top" width='37.5%' >
 </tr>
 {/capture}
 {if $fieldsUsed > 0 }
@@ -845,40 +839,46 @@ document.getElementById('detailpanel_3').className += ' expanded';
 {counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
 {capture name="tr" assign="tableRow"}
 <tr>
-<td valign="top" id='assigned_user_name_label' width='12.5%' scope="col">
-{capture name="label" assign="label"}{sugar_translate label='LBL_ASSIGNED_TO_NAME' module='Contacts'}{/capture}
+<td valign="top" id='produkte_c_label' width='12.5%' scope="col">
+{capture name="label" assign="label"}{sugar_translate label='LBL_PRODUKTE' module='Contacts'}{/capture}
 {$label|strip_semicolon}:
 </td>
 {counter name="fieldsUsed"}
 
-<td valign="top" width='37.5%' colspan='3'>
+<td valign="top" width='37.5%' >
 {counter name="panelFieldCount"}
 
-<input type="text" name="{$fields.assigned_user_name.name}" class="sqsEnabled" tabindex="0" id="{$fields.assigned_user_name.name}" size="" value="{$fields.assigned_user_name.value}" title='' autocomplete="off"  	 >
-<input type="hidden" name="{$fields.assigned_user_name.id_name}" 
-id="{$fields.assigned_user_name.id_name}" 
-value="{$fields.assigned_user_id.value}">
+<input type="text" name="{$fields.produkte_c.name}" class="sqsEnabled" tabindex="0" id="{$fields.produkte_c.name}" size="" value="{$fields.produkte_c.value}" title='' autocomplete="off"  	 >
+<input type="hidden" name="{$fields.produkte_c.id_name}" 
+id="{$fields.produkte_c.id_name}" 
+value="{$fields.aos_products_id_c.value}">
 <span class="id-ff multiple">
-<button type="button" name="btn_{$fields.assigned_user_name.name}" id="btn_{$fields.assigned_user_name.name}" tabindex="0" title="{sugar_translate label="LBL_ACCESSKEY_SELECT_USERS_TITLE"}" class="button firstChild" value="{sugar_translate label="LBL_ACCESSKEY_SELECT_USERS_LABEL"}"
+<button type="button" name="btn_{$fields.produkte_c.name}" id="btn_{$fields.produkte_c.name}" tabindex="0" title="{sugar_translate label="LBL_SELECT_BUTTON_TITLE"}" class="button firstChild" value="{sugar_translate label="LBL_SELECT_BUTTON_LABEL"}"
 onclick='open_popup(
-"{$fields.assigned_user_name.module}", 
+"{$fields.produkte_c.module}", 
 600, 
 400, 
 "", 
 true, 
 false, 
-{literal}{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"assigned_user_id","user_name":"assigned_user_name"}}{/literal}, 
+{literal}{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"aos_products_id_c","name":"produkte_c"}}{/literal}, 
 "single", 
 true
-);' ><img src="{sugar_getimagepath file="id-ff-select.png"}"></button><button type="button" name="btn_clr_{$fields.assigned_user_name.name}" id="btn_clr_{$fields.assigned_user_name.name}" tabindex="0" title="{sugar_translate label="LBL_ACCESSKEY_CLEAR_USERS_TITLE"}"  class="button lastChild"
-onclick="SUGAR.clearRelateField(this.form, '{$fields.assigned_user_name.name}', '{$fields.assigned_user_name.id_name}');"  value="{sugar_translate label="LBL_ACCESSKEY_CLEAR_USERS_LABEL"}" ><img src="{sugar_getimagepath file="id-ff-clear.png"}"></button>
+);' ><img src="{sugar_getimagepath file="id-ff-select.png"}"></button><button type="button" name="btn_clr_{$fields.produkte_c.name}" id="btn_clr_{$fields.produkte_c.name}" tabindex="0" title="{sugar_translate label="LBL_ACCESSKEY_CLEAR_RELATE_TITLE"}"  class="button lastChild"
+onclick="SUGAR.clearRelateField(this.form, '{$fields.produkte_c.name}', '{$fields.produkte_c.id_name}');"  value="{sugar_translate label="LBL_ACCESSKEY_CLEAR_RELATE_LABEL"}" ><img src="{sugar_getimagepath file="id-ff-clear.png"}"></button>
 </span>
 <script type="text/javascript">
 SUGAR.util.doWhen(
-		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['{$form_name}_{$fields.assigned_user_name.name}']) != 'undefined'",
+		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['{$form_name}_{$fields.produkte_c.name}']) != 'undefined'",
 		enableQS
 );
 </script>
+<td valign="top" id='_label' width='12.5%' scope="col">
+&nbsp;
+</td>
+{counter name="fieldsUsed"}
+
+<td valign="top" width='37.5%' >
 </tr>
 {/capture}
 {if $fieldsUsed > 0 }
@@ -923,8 +923,8 @@ $(document).ready(function() {ldelim}
 </script>{literal}
 <script type="text/javascript">
 addForm('EditView');addToValidate('EditView', 'name', 'name', false,'{/literal}{sugar_translate label='LBL_NAME' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'date_entered_date', 'date', false,'Date Created' );
-addToValidate('EditView', 'date_modified_date', 'date', false,'Date Modified' );
+addToValidate('EditView', 'date_entered_date', 'date', false,'Дата создания' );
+addToValidate('EditView', 'date_modified_date', 'date', false,'Дата изменения' );
 addToValidate('EditView', 'modified_user_id', 'assigned_user_name', false,'{/literal}{sugar_translate label='LBL_MODIFIED' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'modified_by_name', 'relate', false,'{/literal}{sugar_translate label='LBL_MODIFIED_NAME' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'created_by', 'assigned_user_name', false,'{/literal}{sugar_translate label='LBL_CREATED' module='Contacts' for_js=true}{literal}' );
@@ -994,6 +994,8 @@ addToValidate('EditView', 'joomla_account_id', 'varchar', false,'{/literal}{suga
 addToValidate('EditView', 'portal_account_disabled', 'bool', false,'{/literal}{sugar_translate label='LBL_PORTAL_ACCOUNT_DISABLED' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'joomla_account_access', 'varchar', false,'{/literal}{sugar_translate label='LBL_JOOMLA_ACCOUNT_ACCESS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'portal_user_type', 'enum', false,'{/literal}{sugar_translate label='LBL_PORTAL_USER_TYPE' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'produkte_c', 'relate', false,'{/literal}{sugar_translate label='LBL_PRODUKTE' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'aos_products_id_c', 'id', false,'{/literal}{sugar_translate label='LBL_PRODUKTE_AOS_PRODUCTS_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_address_c', 'varchar', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_ADDRESS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_geocode_status_c', 'varchar', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_GEOCODE_STATUS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_lat_c', 'float', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_LAT' module='Contacts' for_js=true}{literal}' );
@@ -1002,4 +1004,5 @@ addToValidateBinaryDependency('EditView', 'assigned_user_name', 'alpha', false,'
 addToValidateBinaryDependency('EditView', 'account_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_ACCOUNT_NAME' module='Contacts' for_js=true}{literal}', 'account_id' );
 addToValidateBinaryDependency('EditView', 'report_to_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_REPORTS_TO' module='Contacts' for_js=true}{literal}', 'reports_to_id' );
 addToValidateBinaryDependency('EditView', 'campaign_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_CAMPAIGN' module='Contacts' for_js=true}{literal}', 'campaign_id' );
-</script><script language="javascript">if(typeof sqs_objects == 'undefined'){var sqs_objects = new Array;}sqs_objects['EditView_account_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id","billing_address_street","billing_address_city","billing_address_state","billing_address_postalcode","billing_address_country","phone_office"],"populate_list":["EditView_account_name","account_id","primary_address_street","primary_address_city","primary_address_state","primary_address_postalcode","primary_address_country","phone_work"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_report_to_name']={"form":"EditView","method":"get_contact_array","modules":["Contacts"],"field_list":["salutation","first_name","last_name","id"],"populate_list":["report_to_name","reports_to_id","reports_to_id","reports_to_id"],"required_list":["reports_to_id"],"group":"or","conditions":[{"name":"first_name","op":"like_custom","end":"%","value":""},{"name":"last_name","op":"like_custom","end":"%","value":""}],"order":"last_name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_campaign_name']={"form":"EditView","method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_id","campaign_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["campaign_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_assigned_user_name']={"form":"EditView","method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name","assigned_user_id"],"required_list":["assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};</script>{/literal}
+addToValidateBinaryDependency('EditView', 'produkte_c', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='undefined' module='Contacts' for_js=true}{literal}', 'aos_products_id_c' );
+</script><script language="javascript">if(typeof sqs_objects == 'undefined'){var sqs_objects = new Array;}sqs_objects['EditView_account_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id","billing_address_street","billing_address_city","billing_address_state","billing_address_postalcode","billing_address_country","phone_office"],"populate_list":["EditView_account_name","account_id","primary_address_street","primary_address_city","primary_address_state","primary_address_postalcode","primary_address_country","phone_work"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"\u041d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d\u043e"};sqs_objects['EditView_report_to_name']={"form":"EditView","method":"get_contact_array","modules":["Contacts"],"field_list":["salutation","first_name","last_name","id"],"populate_list":["report_to_name","reports_to_id","reports_to_id","reports_to_id"],"required_list":["reports_to_id"],"group":"or","conditions":[{"name":"first_name","op":"like_custom","end":"%","value":""},{"name":"last_name","op":"like_custom","end":"%","value":""}],"order":"last_name","limit":"30","no_match_text":"\u041d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d\u043e"};sqs_objects['EditView_campaign_name']={"form":"EditView","method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_id","campaign_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["campaign_id"],"order":"name","limit":"30","no_match_text":"\u041d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d\u043e"};sqs_objects['EditView_produkte_c']={"form":"EditView","method":"query","modules":["AOS_Products"],"group":"or","field_list":["name","id"],"populate_list":["produkte_c","aos_products_id_c"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"\u041d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d\u043e"};</script>{/literal}

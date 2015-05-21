@@ -1,5 +1,5 @@
 <?php
-// created: 2015-04-27 10:24:41
+// created: 2015-05-18 14:40:35
 $mod_strings = array (
   'ADVANCED' => 'Advanced',
   'DEFAULT_CURRENCY_ISO4217' => 'ISO 4217 currency code',

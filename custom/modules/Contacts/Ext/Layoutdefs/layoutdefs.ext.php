@@ -2,6 +2,30 @@
  //WARNING: The contents of this file are auto-generated
 
 
+ // created: 2015-05-18 13:59:46
+$layout_defs["Contacts"]["subpanel_setup"]['contacts_aos_products_1'] = array (
+  'order' => 100,
+  'module' => 'AOS_Products',
+  'subpanel_name' => 'default',
+  'sort_order' => 'asc',
+  'sort_by' => 'id',
+  'title_key' => 'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE',
+  'get_subpanel_data' => 'contacts_aos_products_1',
+  'top_buttons' => 
+  array (
+    0 => 
+    array (
+      'widget_class' => 'SubPanelTopButtonQuickCreate',
+    ),
+    1 => 
+    array (
+      'widget_class' => 'SubPanelTopSelectButton',
+      'mode' => 'MultiSelect',
+    ),
+  ),
+);
+
+
 /**
  * sps_contactsLayoutdefs.php
  * @author SalesAgility <support@salesagility.com>
@@ -60,6 +84,30 @@ $layout_defs['Contacts']['subpanel_setup']['securitygroups'] = array(
 
 
 
+
+
+ // created: 2015-05-18 14:00:28
+$layout_defs["Contacts"]["subpanel_setup"]['contacts_aos_products_2'] = array (
+  'order' => 100,
+  'module' => 'AOS_Products',
+  'subpanel_name' => 'default',
+  'sort_order' => 'asc',
+  'sort_by' => 'id',
+  'title_key' => 'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE',
+  'get_subpanel_data' => 'contacts_aos_products_2',
+  'top_buttons' => 
+  array (
+    0 => 
+    array (
+      'widget_class' => 'SubPanelTopButtonQuickCreate',
+    ),
+    1 => 
+    array (
+      'widget_class' => 'SubPanelTopSelectButton',
+      'mode' => 'MultiSelect',
+    ),
+  ),
+);
 
 
  // created: 2013-04-15 12:13:27
@@ -139,5 +187,9 @@ $layout_defs["Contacts"]["subpanel_setup"]["contact_aos_contracts"] = array (
   'get_subpanel_data' => 'aos_contracts',
 );
 
+
+
+//auto-generated file DO NOT EDIT
+$layout_defs['Contacts']['subpanel_setup']['contacts_aos_products_1']['override_subpanel_name'] = 'Contact_subpanel_contacts_aos_products_1';
 
 ?>

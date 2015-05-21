@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2015-04-27 10:44:02
+<?php /* Smarty version 2.6.11, created on 2015-05-18 14:10:57
          compiled from cache/modules/AOS_Products/EditView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'cache/modules/AOS_Products/EditView.tpl', 25, false),array('modifier', 'strip_semicolon', 'cache/modules/AOS_Products/EditView.tpl', 43, false),array('modifier', 'lookup', 'cache/modules/AOS_Products/EditView.tpl', 160, false),array('modifier', 'count', 'cache/modules/AOS_Products/EditView.tpl', 240, false),array('function', 'sugar_include', 'cache/modules/AOS_Products/EditView.tpl', 30, false),array('function', 'counter', 'cache/modules/AOS_Products/EditView.tpl', 36, false),array('function', 'sugar_translate', 'cache/modules/AOS_Products/EditView.tpl', 42, false),array('function', 'sugar_getimagepath', 'cache/modules/AOS_Products/EditView.tpl', 111, false),array('function', 'html_options', 'cache/modules/AOS_Products/EditView.tpl', 135, false),array('function', 'sugar_number_format', 'cache/modules/AOS_Products/EditView.tpl', 378, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'cache/modules/AOS_Products/EditView.tpl', 25, false),array('modifier', 'strip_semicolon', 'cache/modules/AOS_Products/EditView.tpl', 43, false),array('modifier', 'lookup', 'cache/modules/AOS_Products/EditView.tpl', 160, false),array('modifier', 'count', 'cache/modules/AOS_Products/EditView.tpl', 240, false),array('function', 'sugar_include', 'cache/modules/AOS_Products/EditView.tpl', 30, false),array('function', 'counter', 'cache/modules/AOS_Products/EditView.tpl', 36, false),array('function', 'sugar_translate', 'cache/modules/AOS_Products/EditView.tpl', 42, false),array('function', 'sugar_getimagepath', 'cache/modules/AOS_Products/EditView.tpl', 111, false),array('function', 'html_options', 'cache/modules/AOS_Products/EditView.tpl', 135, false),array('function', 'sugar_number_format', 'cache/modules/AOS_Products/EditView.tpl', 402, false),)), $this); ?>
 
 
 <form action="index.php" method="POST" name="<?php echo $this->_tpl_vars['form_name']; ?>
@@ -452,8 +452,8 @@ SyncToHidden(e.result.raw.key);
 
 <?php ob_start(); ?>
 <tr>
-<td valign="top" id='currency_id_label' width='12.5%' scope="col">
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_CURRENCY','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+<td valign="top" id='contact_label' width='12.5%' scope="col">
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_CONTACT','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
@@ -462,9 +462,54 @@ SyncToHidden(e.result.raw.key);
 <td valign="top" width='37.5%' colspan='3'>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
-<span id='currency_id_span'>
-<?php echo $this->_tpl_vars['fields']['currency_id']['value']; ?>
+
+<input type="text" name="<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+" class="sqsEnabled" tabindex="0" id="<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+" size="" value="<?php echo $this->_tpl_vars['fields']['contact']['value']; ?>
+" title='' autocomplete="off"  	 >
+<input type="hidden" name="<?php echo $this->_tpl_vars['fields']['contact']['id_name']; ?>
+" 
+id="<?php echo $this->_tpl_vars['fields']['contact']['id_name']; ?>
+" 
+value="<?php echo $this->_tpl_vars['fields']['contact_id']['value']; ?>
+">
+<span class="id-ff multiple">
+<button type="button" name="btn_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+" id="btn_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+" tabindex="0" title="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_SELECT_CONTACTS_TITLE'), $this);?>
+" class="button firstChild" value="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_SELECT_CONTACTS_LABEL'), $this);?>
+"
+onclick='open_popup(
+"<?php echo $this->_tpl_vars['fields']['contact']['module']; ?>
+", 
+600, 
+400, 
+"", 
+true, 
+false, 
+<?php echo '{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"contact_id","name":"contact"}}'; ?>
+, 
+"single", 
+true
+);' ><img src="<?php echo smarty_function_sugar_getimagepath(array('file' => "id-ff-select.png"), $this);?>
+"></button><button type="button" name="btn_clr_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+" id="btn_clr_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+" tabindex="0" title="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_CLEAR_CONTACTS_TITLE'), $this);?>
+"  class="button lastChild"
+onclick="SUGAR.clearRelateField(this.form, '<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+', '<?php echo $this->_tpl_vars['fields']['contact']['id_name']; ?>
+');"  value="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_CLEAR_CONTACTS_LABEL'), $this);?>
+" ><img src="<?php echo smarty_function_sugar_getimagepath(array('file' => "id-ff-clear.png"), $this);?>
+"></button>
 </span>
+<script type="text/javascript">
+SUGAR.util.doWhen(
+		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['<?php echo $this->_tpl_vars['form_name']; ?>
+_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
+']) != 'undefined'",
+		enableQS
+);
+</script>
 </tr>
 <?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean();  if ($this->_tpl_vars['fieldsUsed'] > 0):  echo $this->_tpl_vars['tableRow']; ?>
 
@@ -516,9 +561,10 @@ id='<?php echo $this->_tpl_vars['fields']['price']['name']; ?>
 
 <?php ob_start(); ?>
 <tr>
-<td valign="top" id='contact_label' width='12.5%' scope="col">
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_CONTACT','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+<td valign="top" id='amount_c_label' width='12.5%' scope="col">
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_AMOUNT','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
+<span class="required">*</span>
 </td>
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
@@ -527,53 +573,12 @@ id='<?php echo $this->_tpl_vars['fields']['price']['name']; ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<input type="text" name="<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-" class="sqsEnabled" tabindex="0" id="<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-" size="" value="<?php echo $this->_tpl_vars['fields']['contact']['value']; ?>
-" title='' autocomplete="off"  	 >
-<input type="hidden" name="<?php echo $this->_tpl_vars['fields']['contact']['id_name']; ?>
-" 
-id="<?php echo $this->_tpl_vars['fields']['contact']['id_name']; ?>
-" 
-value="<?php echo $this->_tpl_vars['fields']['contact_id']['value']; ?>
-">
-<span class="id-ff multiple">
-<button type="button" name="btn_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-" id="btn_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-" tabindex="0" title="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_SELECT_CONTACTS_TITLE'), $this);?>
-" class="button firstChild" value="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_SELECT_CONTACTS_LABEL'), $this);?>
-"
-onclick='open_popup(
-"<?php echo $this->_tpl_vars['fields']['contact']['module']; ?>
-", 
-600, 
-400, 
-"", 
-true, 
-false, 
-<?php echo '{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"contact_id","name":"contact"}}'; ?>
-, 
-"single", 
-true
-);' ><img src="<?php echo smarty_function_sugar_getimagepath(array('file' => "id-ff-select.png"), $this);?>
-"></button><button type="button" name="btn_clr_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-" id="btn_clr_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-" tabindex="0" title="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_CLEAR_CONTACTS_TITLE'), $this);?>
-"  class="button lastChild"
-onclick="SUGAR.clearRelateField(this.form, '<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-', '<?php echo $this->_tpl_vars['fields']['contact']['id_name']; ?>
-');"  value="<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCESSKEY_CLEAR_CONTACTS_LABEL'), $this);?>
-" ><img src="<?php echo smarty_function_sugar_getimagepath(array('file' => "id-ff-clear.png"), $this);?>
-"></button>
-</span>
-<script type="text/javascript">
-SUGAR.util.doWhen(
-		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['<?php echo $this->_tpl_vars['form_name']; ?>
-_<?php echo $this->_tpl_vars['fields']['contact']['name']; ?>
-']) != 'undefined'",
-		enableQS
-);
-</script>
+<?php if (strlen ( $this->_tpl_vars['fields']['amount_c']['value'] ) <= 0):  $this->assign('value', $this->_tpl_vars['fields']['amount_c']['default_value']);  else:  $this->assign('value', $this->_tpl_vars['fields']['amount_c']['value']);  endif; ?>  
+<input type='text' name='<?php echo $this->_tpl_vars['fields']['amount_c']['name']; ?>
+' 
+id='<?php echo $this->_tpl_vars['fields']['amount_c']['name']; ?>
+' size='30' maxlength='255' value='<?php echo smarty_function_sugar_number_format(array('precision' => 0,'var' => $this->_tpl_vars['value']), $this);?>
+' title='' tabindex='0'    >
 <td valign="top" id='url_label' width='12.5%' scope="col">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_URL','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
@@ -600,33 +605,6 @@ value='<?php echo $this->_tpl_vars['value']; ?>
 
 <?php ob_start(); ?>
 <tr>
-<td valign="top" id='description_label' width='12.5%' scope="col">
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DESCRIPTION','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-
-<td valign="top" width='37.5%' colspan='3'>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<?php if (empty ( $this->_tpl_vars['fields']['description']['value'] )):  $this->assign('value', $this->_tpl_vars['fields']['description']['default_value']);  else:  $this->assign('value', $this->_tpl_vars['fields']['description']['value']);  endif; ?>  
-<textarea  id='<?php echo $this->_tpl_vars['fields']['description']['name']; ?>
-' name='<?php echo $this->_tpl_vars['fields']['description']['name']; ?>
-'
-rows="6" 
-cols="80" 
-title='' tabindex="0" 
- ><?php echo $this->_tpl_vars['value']; ?>
-</textarea>
-</tr>
-<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean();  if ($this->_tpl_vars['fieldsUsed'] > 0):  echo $this->_tpl_vars['tableRow']; ?>
-
-<?php endif;  echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
-
-<?php ob_start(); ?>
-<tr>
 <td valign="top" id='product_image_label' width='12.5%' scope="col">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_PRODUCT_IMAGE','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
@@ -634,11 +612,24 @@ title='' tabindex="0"
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 
-<td valign="top" width='37.5%' colspan='3'>
+<td valign="top" width='37.5%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 <?php echo $this->_tpl_vars['PRODUCT_IMAGE']; ?>
 
+<td valign="top" id='currency_id_label' width='12.5%' scope="col">
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_CURRENCY','module' => 'AOS_Products'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+</td>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
+
+
+<td valign="top" width='37.5%' >
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+<span id='currency_id_span'>
+<?php echo $this->_tpl_vars['fields']['currency_id']['value']; ?>
+</span>
 </tr>
 <?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean();  if ($this->_tpl_vars['fieldsUsed'] > 0):  echo $this->_tpl_vars['tableRow']; ?>
 
@@ -734,6 +725,7 @@ addToValidate(\'EditView\', \'product_image\', \'varchar\', false,\'';  echo sma
 addToValidate(\'EditView\', \'file_url\', \'function\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_FILE_URL','module' => 'AOS_Products','for_js' => true), $this); echo '\' );
 addToValidate(\'EditView\', \'aos_product_category_name\', \'relate\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_AOS_PRODUCT_CATEGORYS_NAME','module' => 'AOS_Products','for_js' => true), $this); echo '\' );
 addToValidate(\'EditView\', \'aos_product_category_id\', \'id\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_AOS_PRODUCT_CATEGORY','module' => 'AOS_Products','for_js' => true), $this); echo '\' );
+addToValidate(\'EditView\', \'amount_c\', \'int\', true,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_AMOUNT','module' => 'AOS_Products','for_js' => true), $this); echo '\' );
 addToValidateBinaryDependency(\'EditView\', \'assigned_user_name\', \'alpha\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'ERR_SQS_NO_MATCH_FIELD','module' => 'AOS_Products','for_js' => true), $this); echo ': ';  echo smarty_function_sugar_translate(array('label' => 'LBL_ASSIGNED_TO','module' => 'AOS_Products','for_js' => true), $this); echo '\', \'assigned_user_id\' );
 addToValidateBinaryDependency(\'EditView\', \'contact\', \'alpha\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'ERR_SQS_NO_MATCH_FIELD','module' => 'AOS_Products','for_js' => true), $this); echo ': ';  echo smarty_function_sugar_translate(array('label' => 'LBL_CONTACT','module' => 'AOS_Products','for_js' => true), $this); echo '\', \'contact_id\' );
 addToValidateBinaryDependency(\'EditView\', \'aos_product_category_name\', \'alpha\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'ERR_SQS_NO_MATCH_FIELD','module' => 'AOS_Products','for_js' => true), $this); echo ': ';  echo smarty_function_sugar_translate(array('label' => 'LBL_AOS_PRODUCT_CATEGORYS_NAME','module' => 'AOS_Products','for_js' => true), $this); echo '\', \'aos_product_category_id\' );

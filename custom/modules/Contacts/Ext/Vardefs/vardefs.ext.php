@@ -2,6 +2,18 @@
  //WARNING: The contents of this file are auto-generated
 
 
+// created: 2015-05-18 13:59:46
+$dictionary["Contact"]["fields"]["contacts_aos_products_1"] = array (
+  'name' => 'contacts_aos_products_1',
+  'type' => 'link',
+  'relationship' => 'contacts_aos_products_1',
+  'source' => 'non-db',
+  'module' => 'AOS_Products',
+  'bean_name' => 'AOS_Products',
+  'vname' => 'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE',
+);
+
+
 
 $dictionary['Contact']['fields']['e_invite_status_fields'] =
 		array (
@@ -77,6 +89,10 @@ $dictionary['Contact']['fields']['event_status_id'] =
         'studio' => array('listview' => false),
     );
 
+
+ // created: 2015-05-18 14:12:43
+
+ 
 
 $dictionary["Contact"]["fields"]["aos_quotes"] = array (
   'name' => 'aos_quotes',
@@ -221,6 +237,18 @@ $dictionary["Contact"]["fields"]["portal_user_type"] = array (
 
  
 
+// created: 2015-05-18 14:00:28
+$dictionary["Contact"]["fields"]["contacts_aos_products_2"] = array (
+  'name' => 'contacts_aos_products_2',
+  'type' => 'link',
+  'relationship' => 'contacts_aos_products_2',
+  'source' => 'non-db',
+  'module' => 'AOS_Products',
+  'bean_name' => 'AOS_Products',
+  'vname' => 'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE',
+);
+
+
 // created: 2013-04-15 12:13:27
 $dictionary["Contact"]["fields"]["fp_events_contacts"] = array (
   'name' => 'fp_events_contacts',
@@ -250,4 +278,9 @@ $dictionary['Contact']['fields']['SecurityGroups'] = array (
 
 
 
+
+ // created: 2015-05-18 14:12:43
+$dictionary['Contact']['fields']['produkte_c']['labelValue']='Produkte';
+
+ 
 ?>

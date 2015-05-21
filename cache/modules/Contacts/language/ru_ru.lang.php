@@ -1,5 +1,5 @@
 <?php
-// created: 2015-04-27 12:52:12
+// created: 2015-05-18 14:28:40
 $mod_strings = array (
   'LBL_ID' => 'ID:',
   'LBL_DATE_ENTERED' => 'Дата создания',
@@ -214,4 +214,6 @@ $mod_strings = array (
   'LBL_FP_EVENTS_CONTACTS_FROM_FP_EVENTS_TITLE' => 'События',
   'LBL_FP_EVENT_DELEGATES_CONTACTS_1_FROM_FP_EVENT_DELEGATES_TITLE' => 'Участники',
   'LBL_SECURITYGROUPS_SUBPANEL_TITLE' => 'Группы пользователей',
+  'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE' => 'Products',
+  'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE' => 'Products',
 );

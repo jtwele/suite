@@ -1,6 +1,8 @@
 <?php
-// created: 2015-04-27 10:32:20
+// created: 2015-05-18 14:00:42
 $mod_strings = array (
+  'LBL_ASSIGNED_TO_ID' => 'Assigned User Id',
+  'LBL_ASSIGNED_TO_NAME' => 'Assigned to',
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
   'LBL_DATE_MODIFIED' => 'Date Modified',
@@ -14,11 +16,6 @@ $mod_strings = array (
   'LBL_NAME' => 'Product Name',
   'LBL_CREATED_USER' => 'Created by User',
   'LBL_MODIFIED_USER' => 'Modified by User',
-  'LBL_LIST_NAME' => 'Name',
-  'LBL_EDIT_BUTTON' => 'Edit',
-  'LBL_REMOVE' => 'Remove',
-  'LBL_ASSIGNED_TO_ID' => 'Assigned User Id',
-  'LBL_ASSIGNED_TO_NAME' => 'Assigned to',
   'LBL_LIST_FORM_TITLE' => 'Products List',
   'LBL_MODULE_NAME' => 'Products',
   'LBL_MODULE_TITLE' => 'Products: Home',
@@ -46,4 +43,7 @@ $mod_strings = array (
   'LBL_COST_USDOLLAR' => 'Cost (Default Currency)',
   'LBL_PRICE_USDOLLAR' => 'Price (Default Currency)',
   'LBL_FILE_URL' => 'File URL',
+  'LBL_AMOUNT' => 'Amount',
+  'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_CONTACTS_TITLE' => 'Contacts',
+  'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_CONTACTS_TITLE' => 'Contacts',
 );

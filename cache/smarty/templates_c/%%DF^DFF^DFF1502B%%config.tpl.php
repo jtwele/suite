@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2015-05-03 16:04:28
+<?php /* Smarty version 2.6.11, created on 2015-05-18 14:40:09
          compiled from modules/EmailMan/tpls/config.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getjspath', 'modules/EmailMan/tpls/config.tpl', 46, false),)), $this); ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2015-04-27 10:44:02
+<?php /* Smarty version 2.6.11, created on 2015-05-18 14:00:46
          compiled from include/EditView/footer.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_button', 'include/EditView/footer.tpl', 55, false),array('function', 'sugar_action_menu', 'include/EditView/footer.tpl', 64, false),)), $this); ?>

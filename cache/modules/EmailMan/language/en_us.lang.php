@@ -1,5 +1,5 @@
 <?php
-// created: 2015-05-03 16:04:28
+// created: 2015-05-18 14:40:09
 $mod_strings = array (
   'LBL_SEND_DATE_TIME' => 'Send Date',
   'LBL_IN_QUEUE' => 'In Process',

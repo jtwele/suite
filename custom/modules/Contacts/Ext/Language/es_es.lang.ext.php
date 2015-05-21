@@ -2,6 +2,10 @@
  //WARNING: The contents of this file are auto-generated
 
 
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE'] = 'Products';
+
+
 /**
  *
  * @package Advanced OpenPortal
@@ -40,6 +44,11 @@ $mod_strings['LBL_NO_JOOMLA_URL'] = "No se especificó URL del portal";
 //THIS FILE IS AUTO GENERATED, DO NOT MODIFY
 $mod_strings['LBL_FP_EVENTS_CONTACTS_FROM_FP_EVENTS_TITLE'] = 'Eventos';
 $mod_strings['LBL_FP_EVENT_DELEGATES_CONTACTS_1_FROM_FP_EVENT_DELEGATES_TITLE'] = 'Delegados';
+
+
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE'] = 'Products';
+$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE'] = 'Products';
 
 
 

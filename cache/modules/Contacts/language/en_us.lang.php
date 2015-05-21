@@ -1,5 +1,5 @@
 <?php
-// created: 2015-04-27 10:32:20
+// created: 2015-05-18 14:12:44
 $mod_strings = array (
   'LBL_ID' => 'ID:',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -199,6 +199,9 @@ $mod_strings = array (
   'LBL_EXPORT_PHONE_MOBILE' => 'Mobile Phone',
   'LBL_CONTACT_HISTORY_SUBPANEL_TITLE' => 'Related Contacts\' Emails',
   'LBL_USER_SYNC' => 'User Sync',
+  'LBL_PANEL_ASSIGNMENT' => 'Products',
+  'LBL_EDITVIEW_PANEL1' => 'New Panel 1',
+  'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE' => 'Products',
   'LBL_AOP_CASE_UPDATES' => 'Case Updates',
   'LBL_CREATE_PORTAL_USER' => 'Create Portal User',
   'LBL_ENABLE_PORTAL_USER' => 'Enable Portal User',
@@ -214,4 +217,5 @@ $mod_strings = array (
   'LBL_SECURITYGROUPS_SUBPANEL_TITLE' => 'Security Groups',
   'LBL_FP_EVENTS_CONTACTS_FROM_FP_EVENTS_TITLE' => 'Events',
   'LBL_FP_EVENT_DELEGATES_CONTACTS_1_FROM_FP_EVENT_DELEGATES_TITLE' => 'Delegates',
+  'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE' => 'Products',
 );
