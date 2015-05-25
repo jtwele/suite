@@ -14,6 +14,12 @@ $dictionary["AOS_Products"]["fields"]["contacts_aos_products_2"] = array (
 );
 
 
+ // created: 2015-05-25 13:15:00
+$dictionary['AOS_Products']['fields']['price']['required']=false;
+$dictionary['AOS_Products']['fields']['price']['merge_filter']='disabled';
+
+ 
+
 // created: 2015-05-18 13:59:46
 $dictionary["AOS_Products"]["fields"]["contacts_aos_products_1"] = array (
   'name' => 'contacts_aos_products_1',
@@ -26,7 +32,7 @@ $dictionary["AOS_Products"]["fields"]["contacts_aos_products_1"] = array (
 );
 
 
- // created: 2015-05-18 11:16:17
+ // created: 2015-05-25 13:14:38
 $dictionary['AOS_Products']['fields']['amount_c']['options']='numeric_range_search_dom';
 $dictionary['AOS_Products']['fields']['amount_c']['labelValue']='Amount';
 $dictionary['AOS_Products']['fields']['amount_c']['enable_range_search']='1';

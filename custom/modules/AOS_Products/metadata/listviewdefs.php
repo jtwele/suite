@@ -8,43 +8,20 @@ array (
     'default' => true,
     'link' => true,
   ),
-  'CONTACT' => 
+  'CATEGORY' => 
   array (
-    'type' => 'relate',
+    'type' => 'enum',
     'studio' => 'visible',
-    'label' => 'LBL_CONTACT',
-    'id' => 'CONTACT_ID',
-    'link' => true,
+    'label' => 'LBL_CATEGORY',
     'width' => '10%',
     'default' => true,
   ),
-  'PRICE' => 
+  'PRODUCT_IMAGE' => 
   array (
-    'width' => '10%',
-    'label' => 'LBL_PRICE',
-    'currency_format' => true,
+    'type' => 'varchar',
+    'label' => 'LBL_PRODUCT_IMAGE',
+    'width' => '20%',
     'default' => true,
-  ),
-  'AOS_PRODUCT_CATEGORY_NAME' => 
-  array (
-    'type' => 'relate',
-    'studio' => 'visible',
-    'label' => 'LBL_AOS_PRODUCT_CATEGORYS_NAME',
-    'id' => 'AOS_PRODUCT_CATEGORY_ID',
-    'link' => true,
-    'width' => '10%',
-    'default' => true,
-    'related_fields' => 
-    array (
-      0 => 'aos_product_category_id',
-    ),
-  ),
-  'AMOUNT_C' => 
-  array (
-    'type' => 'int',
-    'default' => true,
-    'label' => 'LBL_AMOUNT',
-    'width' => '10%',
   ),
 );
 ?>

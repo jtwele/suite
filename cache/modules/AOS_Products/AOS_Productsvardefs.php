@@ -332,7 +332,7 @@
     ),
     'price' => 
     array (
-      'required' => '1',
+      'required' => false,
       'name' => 'price',
       'vname' => 'LBL_PRICE',
       'type' => 'currency',
@@ -347,6 +347,7 @@
       'reportable' => true,
       'enable_range_search' => true,
       'options' => 'numeric_range_search_dom',
+      'merge_filter' => 'disabled',
     ),
     'price_usdollar' => 
     array (
@@ -511,7 +512,7 @@
       'options' => 'numeric_range_search_dom',
       'labelValue' => 'Amount',
       'enable_range_search' => '1',
-      'required' => true,
+      'required' => false,
       'source' => 'custom_fields',
       'name' => 'amount_c',
       'vname' => 'LBL_AMOUNT',

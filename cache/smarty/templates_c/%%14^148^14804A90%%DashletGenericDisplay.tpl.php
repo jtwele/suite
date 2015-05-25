@@ -1,9 +1,12 @@
-<?php /* Smarty version 2.6.11, created on 2015-05-18 14:28:42
+<?php /* Smarty version 2.6.11, created on 2015-05-25 15:24:34
          compiled from include/Dashlets/DashletGenericDisplay.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimage', 'include/Dashlets/DashletGenericDisplay.tpl', 56, false),array('function', 'sugar_translate', 'include/Dashlets/DashletGenericDisplay.tpl', 117, false),array('function', 'counter', 'include/Dashlets/DashletGenericDisplay.tpl', 158, false),array('function', 'sugar_evalcolumn_old', 'include/Dashlets/DashletGenericDisplay.tpl', 167, false),array('function', 'sugar_field', 'include/Dashlets/DashletGenericDisplay.tpl', 169, false),array('modifier', 'default', 'include/Dashlets/DashletGenericDisplay.tpl', 115, false),array('modifier', 'lower', 'include/Dashlets/DashletGenericDisplay.tpl', 117, false),)), $this); ?>
 
-<?php $this->assign('alt_start', $this->_tpl_vars['navStrings']['start']);  $this->assign('alt_next', $this->_tpl_vars['navStrings']['next']);  $this->assign('alt_prev', $this->_tpl_vars['navStrings']['previous']);  $this->assign('alt_end', $this->_tpl_vars['navStrings']['end']); ?>
+<?php $this->assign('alt_start', $this->_tpl_vars['navStrings']['start']); ?>
+<?php $this->assign('alt_next', $this->_tpl_vars['navStrings']['next']); ?>
+<?php $this->assign('alt_prev', $this->_tpl_vars['navStrings']['previous']); ?>
+<?php $this->assign('alt_end', $this->_tpl_vars['navStrings']['end']); ?>
 
 <table cellpadding='0' cellspacing='0' width='100%' border='0' class='list view'>
     <tr class="pagination" role=”presentation”>
@@ -234,4 +237,4 @@ S1'>
 	    </td>
 	</tr>
 	<?php endif; unset($_from); ?>
-</table>
+</table>

@@ -90,7 +90,32 @@ $dictionary['Contact']['fields']['event_status_id'] =
     );
 
 
- // created: 2015-05-18 14:12:43
+ // created: 2015-05-25 13:32:26
+$dictionary['Contact']['fields']['produkt1_c']['labelValue']='Produkt1';
+
+ 
+
+ // created: 2015-05-25 14:46:16
+$dictionary['Contact']['fields']['menge_c']['labelValue']='Menge:';
+
+ 
+
+ // created: 2015-05-25 13:28:07
+
+ 
+
+ // created: 2015-05-25 13:51:34
+$dictionary['Contact']['fields']['produkt6_c']['labelValue']='Produkt6';
+
+ 
+
+ // created: 2015-05-25 14:44:59
+$dictionary['Contact']['fields']['menge2_c']['labelValue']='Menge2:';
+
+ 
+
+ // created: 2015-05-25 13:46:56
+$dictionary['Contact']['fields']['produkt3_c']['labelValue']='Produkt3';
 
  
 
@@ -233,6 +258,25 @@ $dictionary["Contact"]["fields"]["portal_user_type"] = array (
 );
  
 
+ // created: 2015-05-25 13:45:08
+$dictionary['Contact']['fields']['produkt2_c']['labelValue']='Produkt2';
+
+ 
+
+ // created: 2015-05-25 14:45:17
+$dictionary['Contact']['fields']['preis2_c']['labelValue']='Preis2:';
+
+ 
+
+ // created: 2015-05-25 13:33:16
+
+ 
+
+ // created: 2015-05-25 13:48:19
+$dictionary['Contact']['fields']['produkt4_c']['labelValue']='Produkt4';
+
+ 
+
  // created: 2015-04-27 10:20:52
 
  
@@ -249,6 +293,11 @@ $dictionary["Contact"]["fields"]["contacts_aos_products_2"] = array (
 );
 
 
+ // created: 2015-05-25 13:50:07
+$dictionary['Contact']['fields']['produkt5_c']['labelValue']='Produkt5';
+
+ 
+
 // created: 2013-04-15 12:13:27
 $dictionary["Contact"]["fields"]["fp_events_contacts"] = array (
   'name' => 'fp_events_contacts',
@@ -260,6 +309,18 @@ $dictionary["Contact"]["fields"]["fp_events_contacts"] = array (
 
 
  // created: 2015-04-27 10:20:52
+
+ 
+
+ // created: 2015-05-25 13:45:45
+
+ 
+
+ // created: 2015-05-25 13:47:34
+
+ 
+
+ // created: 2015-05-25 13:48:56
 
  
 
@@ -279,8 +340,12 @@ $dictionary['Contact']['fields']['SecurityGroups'] = array (
 
 
 
- // created: 2015-05-18 14:12:43
-$dictionary['Contact']['fields']['produkte_c']['labelValue']='Produkte';
+ // created: 2015-05-25 14:45:32
+$dictionary['Contact']['fields']['preis_c']['labelValue']='Preis:';
+
+ 
+
+ // created: 2015-05-25 13:50:48
 
  
 ?>

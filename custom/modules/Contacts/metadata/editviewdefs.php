@@ -30,22 +30,17 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'LBL_CONTACT_INFORMATION' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_PANEL_ADVANCED' => 
         array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
-        'LBL_PANEL_ASSIGNMENT' => 
-        array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
       ),
@@ -92,16 +87,6 @@ array (
         ),
         3 => 
         array (
-          0 => 'department',
-          1 => 
-          array (
-            'name' => 'phone_fax',
-            'comment' => 'Contact fax number',
-            'label' => 'LBL_FAX_PHONE',
-          ),
-        ),
-        4 => 
-        array (
           0 => 
           array (
             'name' => 'account_name',
@@ -117,7 +102,7 @@ array (
             ),
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -132,36 +117,14 @@ array (
               'maxlength' => 150,
             ),
           ),
-          1 => 
-          array (
-            'name' => 'alt_address_street',
-            'hideLabel' => true,
-            'type' => 'address',
-            'displayParams' => 
-            array (
-              'key' => 'alt',
-              'copy' => 'primary',
-              'rows' => 2,
-              'cols' => 30,
-              'maxlength' => 150,
-            ),
-          ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
             'name' => 'email1',
             'studio' => 'false',
             'label' => 'LBL_EMAIL_ADDRESS',
-          ),
-        ),
-        7 => 
-        array (
-          0 => 
-          array (
-            'name' => 'description',
-            'label' => 'LBL_DESCRIPTION',
           ),
         ),
       ),
@@ -171,47 +134,51 @@ array (
         array (
           0 => 
           array (
-            'name' => 'report_to_name',
-            'label' => 'LBL_REPORTS_TO',
-          ),
-          1 => 
-          array (
-            'name' => 'sync_contact',
-            'comment' => 'Synch to outlook?  (Meta-Data only)',
-            'label' => 'LBL_SYNC_CONTACT',
+            'name' => 'produkt1_c',
+            'studio' => 'visible',
+            'label' => 'LBL_PRODUKT1',
+            'tabindex' => '1',
           ),
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'lead_source',
-            'comment' => 'How did the contact come about',
-            'label' => 'LBL_LEAD_SOURCE',
+            'name' => 'menge_c',
+            'label' => 'LBL_MENGE',
+            'tabindex' => '2',
           ),
           1 => 
           array (
-            'name' => 'do_not_call',
-            'comment' => 'An indicator of whether contact can be called',
-            'label' => 'LBL_DO_NOT_CALL',
+            'name' => 'preis_c',
+            'label' => 'LBL_PREIS',
+            'tabindex' => '3',
           ),
         ),
         2 => 
         array (
-          0 => 'campaign_name',
+          0 => 
+          array (
+            'name' => 'produkt2_c',
+            'studio' => 'visible',
+            'label' => 'LBL_PRODUKT2_C',
+            'tabindex' => '4',
+          ),
         ),
-      ),
-      'LBL_PANEL_ASSIGNMENT' => 
-      array (
-        0 => 
+        3 => 
         array (
           0 => 
           array (
-            'name' => 'produkte_c',
-            'studio' => 'visible',
-            'label' => 'LBL_PRODUKTE',
+            'name' => 'menge2_c',
+            'label' => 'LBL_MENGE2',
+            'tabindex' => '5',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'preis2_c',
+            'label' => 'LBL_PREIS2',
+            'tabindex' => '6',
+          ),
         ),
       ),
     ),

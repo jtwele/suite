@@ -1,5 +1,5 @@
 <?php
-// created: 2015-05-18 14:12:44
+// created: 2015-05-25 15:24:31
 $mod_strings = array (
   'LBL_ID' => 'ID:',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -55,7 +55,7 @@ $mod_strings = array (
   'LBL_STATE' => 'State:',
   'LBL_POSTALCODE' => 'Postal Code',
   'LBL_POSTAL_CODE' => 'Postal Code:',
-  'LBL_CONTACT_INFORMATION' => 'Overview',
+  'LBL_CONTACT_INFORMATION' => 'Persönliche Daten',
   'LBL_ADDRESS_INFORMATION' => 'Address Information',
   'LBL_OTHER_EMAIL_ADDRESS' => 'Other Email:',
   'LBL_ASSISTANT' => 'Assistant:',
@@ -202,6 +202,18 @@ $mod_strings = array (
   'LBL_PANEL_ASSIGNMENT' => 'Products',
   'LBL_EDITVIEW_PANEL1' => 'New Panel 1',
   'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE' => 'Products',
+  'LBL_PRODUKTE' => 'Produkt1',
+  'LBL_PRODUKT1' => 'Produkt1',
+  'LBL_PRODUKT2_C' => 'Produkt2',
+  'LBL_MENGE' => 'Menge:',
+  'LBL_PANEL_ADVANCED' => 'Produkte',
+  'LBL_PRODUKT3_C' => 'Produkt3',
+  'LBL_PRODUKT4_C' => 'Produkt4',
+  'LBL_PRODUKT5_C' => 'Produkt5',
+  'LBL_PRODUKT6_C' => 'Produkt6',
+  'LBL_MENGE2' => 'Menge2:',
+  'LBL_PREIS' => 'Preis:',
+  'LBL_PREIS2' => 'Preis2:',
   'LBL_AOP_CASE_UPDATES' => 'Case Updates',
   'LBL_CREATE_PORTAL_USER' => 'Create Portal User',
   'LBL_ENABLE_PORTAL_USER' => 'Enable Portal User',
