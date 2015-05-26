@@ -2,18 +2,6 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2015-05-18 13:59:46
-$dictionary["Contact"]["fields"]["contacts_aos_products_1"] = array (
-  'name' => 'contacts_aos_products_1',
-  'type' => 'link',
-  'relationship' => 'contacts_aos_products_1',
-  'source' => 'non-db',
-  'module' => 'AOS_Products',
-  'bean_name' => 'AOS_Products',
-  'vname' => 'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE',
-);
-
-
 
 $dictionary['Contact']['fields']['e_invite_status_fields'] =
 		array (
@@ -95,6 +83,16 @@ $dictionary['Contact']['fields']['produkt1_c']['labelValue']='Produkt1';
 
  
 
+ // created: 2015-05-25 15:35:22
+$dictionary['Contact']['fields']['preis3_c']['labelValue']='Preis3:';
+
+ 
+
+ // created: 2015-05-25 15:33:58
+$dictionary['Contact']['fields']['menge3_c']['labelValue']='Menge3:';
+
+ 
+
  // created: 2015-05-25 14:46:16
 $dictionary['Contact']['fields']['menge_c']['labelValue']='Menge:';
 
@@ -106,6 +104,11 @@ $dictionary['Contact']['fields']['menge_c']['labelValue']='Menge:';
 
  // created: 2015-05-25 13:51:34
 $dictionary['Contact']['fields']['produkt6_c']['labelValue']='Produkt6';
+
+ 
+
+ // created: 2015-05-25 15:33:33
+$dictionary['Contact']['fields']['preis6_c']['labelValue']='Preis6:';
 
  
 
@@ -180,6 +183,16 @@ $dictionary["Contact"]["relationships"]["contact_aos_contracts"] = array (
  
 
  // created: 2015-04-27 10:20:52
+
+ 
+
+ // created: 2015-05-25 15:35:08
+$dictionary['Contact']['fields']['preis4_c']['labelValue']='Preis4:';
+
+ 
+
+ // created: 2015-05-26 03:15:48
+$dictionary['Contact']['fields']['line_items_c']['labelValue']='Line Items';
 
  
 
@@ -258,6 +271,11 @@ $dictionary["Contact"]["fields"]["portal_user_type"] = array (
 );
  
 
+ // created: 2015-05-25 15:33:04
+$dictionary['Contact']['fields']['preis5_c']['labelValue']='Preis5:';
+
+ 
+
  // created: 2015-05-25 13:45:08
 $dictionary['Contact']['fields']['produkt2_c']['labelValue']='Produkt2';
 
@@ -281,17 +299,10 @@ $dictionary['Contact']['fields']['produkt4_c']['labelValue']='Produkt4';
 
  
 
-// created: 2015-05-18 14:00:28
-$dictionary["Contact"]["fields"]["contacts_aos_products_2"] = array (
-  'name' => 'contacts_aos_products_2',
-  'type' => 'link',
-  'relationship' => 'contacts_aos_products_2',
-  'source' => 'non-db',
-  'module' => 'AOS_Products',
-  'bean_name' => 'AOS_Products',
-  'vname' => 'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE',
-);
+ // created: 2015-05-25 15:34:43
+$dictionary['Contact']['fields']['menge6_c']['labelValue']='Menge6:';
 
+ 
 
  // created: 2015-05-25 13:50:07
 $dictionary['Contact']['fields']['produkt5_c']['labelValue']='Produkt5';
@@ -324,6 +335,10 @@ $dictionary["Contact"]["fields"]["fp_events_contacts"] = array (
 
  
 
+ // created: 2015-05-26 03:15:48
+
+ 
+
 
 $dictionary['Contact']['fields']['SecurityGroups'] = array (
   	'name' => 'SecurityGroups',
@@ -345,7 +360,17 @@ $dictionary['Contact']['fields']['preis_c']['labelValue']='Preis:';
 
  
 
+ // created: 2015-05-25 15:34:12
+$dictionary['Contact']['fields']['menge5_c']['labelValue']='Menge5:';
+
+ 
+
  // created: 2015-05-25 13:50:48
+
+ 
+
+ // created: 2015-05-25 15:34:22
+$dictionary['Contact']['fields']['menge4_c']['labelValue']='Menge4:';
 
  
 ?>

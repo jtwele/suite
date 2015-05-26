@@ -1,5 +1,5 @@
 <?php
-// created: 2015-05-26 02:17:17
+// created: 2015-05-26 03:28:40
 $mod_strings = array (
   'LBL_ID' => 'ID:',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -214,6 +214,9 @@ $mod_strings = array (
   'LBL_MENGE2' => 'Menge2:',
   'LBL_PREIS' => 'Preis:',
   'LBL_PREIS2' => 'Preis2:',
+  'LBL_LINE_ITEMS' => 'Line Items',
+  'LBL_CONTACTS_AOS_PRODUCTS_QUOTES_1_FROM_AOS_PRODUCTS_QUOTES_TITLE' => 'Line Items',
+  'LBL_CONTACTS_AOS_PRODUCTS_QUOTES_2_FROM_AOS_PRODUCTS_QUOTES_TITLE' => 'Line Items',
   'LBL_AOP_CASE_UPDATES' => 'Case Updates',
   'LBL_CREATE_PORTAL_USER' => 'Create Portal User',
   'LBL_ENABLE_PORTAL_USER' => 'Enable Portal User',

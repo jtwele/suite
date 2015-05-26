@@ -487,26 +487,6 @@
       'reportable' => false,
       'vname' => 'LBL_AOS_PRODUCT_CATEGORY',
     ),
-    'contacts_aos_products_2' => 
-    array (
-      'name' => 'contacts_aos_products_2',
-      'type' => 'link',
-      'relationship' => 'contacts_aos_products_2',
-      'source' => 'non-db',
-      'module' => 'Contacts',
-      'bean_name' => 'Contact',
-      'vname' => 'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_CONTACTS_TITLE',
-    ),
-    'contacts_aos_products_1' => 
-    array (
-      'name' => 'contacts_aos_products_1',
-      'type' => 'link',
-      'relationship' => 'contacts_aos_products_1',
-      'source' => 'non-db',
-      'module' => 'Contacts',
-      'bean_name' => 'Contact',
-      'vname' => 'LBL_CONTACTS_AOS_PRODUCTS_1_FROM_CONTACTS_TITLE',
-    ),
     'amount_c' => 
     array (
       'options' => 'numeric_range_search_dom',

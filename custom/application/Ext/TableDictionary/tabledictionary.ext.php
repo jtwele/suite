@@ -14,6 +14,11 @@ include('custom/metadata/fp_events_prospects_1MetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/contacts_aos_products_quotes_2MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/aos_quotes_projectMetaData.php');
 
 
@@ -30,11 +35,6 @@ include('custom/metadata/securitygroups_acl_rolesMetaData.php');
  
  //WARNING: The contents of this file are auto-generated
 include('custom/metadata/fp_event_locations_fp_events_1MetaData.php');
-
-
- 
- //WARNING: The contents of this file are auto-generated
-include('custom/metadata/contacts_aos_products_1MetaData.php');
 
 
  
@@ -71,11 +71,6 @@ include('custom/metadata/jjwg_maps_jjwg_areasMetaData.php');
  
  //WARNING: The contents of this file are auto-generated
 include('custom/metadata/aow_processed_aow_actionsMetaData.php');
-
-
- 
- //WARNING: The contents of this file are auto-generated
-include('custom/metadata/contacts_aos_products_2MetaData.php');
 
 
  

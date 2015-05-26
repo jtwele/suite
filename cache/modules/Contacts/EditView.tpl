@@ -485,6 +485,87 @@ tabindex='6'
 {if $panelFieldCount == 0}
 <script>document.getElementById("LBL_PANEL_ADVANCED").style.display='none';</script>
 {/if}
+<div id="detailpanel_3" class="{$def.templateMeta.panelClass|default:'edit view edit508'}">
+{counter name="panelFieldCount" start=0 print=false assign="panelFieldCount"}
+<h4>&nbsp;&nbsp;
+<a href="javascript:void(0)" class="collapseLink" onclick="collapsePanel(3);">
+<img border="0" id="detailpanel_3_img_hide" src="{sugar_getimagepath file="basic_search.gif"}"></a>
+<a href="javascript:void(0)" class="expandLink" onclick="expandPanel(3);">
+<img border="0" id="detailpanel_3_img_show" src="{sugar_getimagepath file="advanced_search.gif"}"></a>
+{sugar_translate label='LBL_EDITVIEW_PANEL1' module='Contacts'}
+<script>
+document.getElementById('detailpanel_3').className += ' expanded';
+</script>
+</h4>
+<table width="100%" border="0" cellspacing="1" cellpadding="0"  id='LBL_EDITVIEW_PANEL1'  class="yui3-skin-sam edit view panelContainer">
+{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
+{capture name="tr" assign="tableRow"}
+<tr>
+<td valign="top" id='line_items_c_label' width='12.5%' scope="col">
+{capture name="label" assign="label"}{sugar_translate label='LBL_LINE_ITEMS' module='Contacts'}{/capture}
+{$label|strip_semicolon}:
+</td>
+{counter name="fieldsUsed"}
+
+<td valign="top" width='37.5%' colspan='3'>
+{counter name="panelFieldCount"}
+
+<input type="text" name="{$fields.line_items_c.name}" class="sqsEnabled" tabindex="0" id="{$fields.line_items_c.name}" size="" value="{$fields.line_items_c.value}" title='' autocomplete="off"  	 >
+<input type="hidden" name="{$fields.line_items_c.id_name}" 
+id="{$fields.line_items_c.id_name}" 
+value="{$fields.aos_products_quotes_id_c.value}">
+<span class="id-ff multiple">
+<button type="button" name="btn_{$fields.line_items_c.name}" id="btn_{$fields.line_items_c.name}" tabindex="0" title="{sugar_translate label="LBL_SELECT_BUTTON_TITLE"}" class="button firstChild" value="{sugar_translate label="LBL_SELECT_BUTTON_LABEL"}"
+onclick='open_popup(
+"{$fields.line_items_c.module}", 
+600, 
+400, 
+"", 
+true, 
+false, 
+{literal}{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"aos_products_quotes_id_c","name":"line_items_c"}}{/literal}, 
+"single", 
+true
+);' ><img src="{sugar_getimagepath file="id-ff-select.png"}"></button><button type="button" name="btn_clr_{$fields.line_items_c.name}" id="btn_clr_{$fields.line_items_c.name}" tabindex="0" title="{sugar_translate label="LBL_ACCESSKEY_CLEAR_RELATE_TITLE"}"  class="button lastChild"
+onclick="SUGAR.clearRelateField(this.form, '{$fields.line_items_c.name}', '{$fields.line_items_c.id_name}');"  value="{sugar_translate label="LBL_ACCESSKEY_CLEAR_RELATE_LABEL"}" ><img src="{sugar_getimagepath file="id-ff-clear.png"}"></button>
+</span>
+<script type="text/javascript">
+SUGAR.util.doWhen(
+		"typeof(sqs_objects) != 'undefined' && typeof(sqs_objects['{$form_name}_{$fields.line_items_c.name}']) != 'undefined'",
+		enableQS
+);
+</script>
+</tr>
+{/capture}
+{if $fieldsUsed > 0 }
+{$tableRow}
+{/if}
+{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
+{capture name="tr" assign="tableRow"}
+<tr>
+<td valign="top" id='_label' width='12.5%' scope="col">
+&nbsp;
+</td>
+{counter name="fieldsUsed"}
+
+<td valign="top" width='37.5%' >
+<td valign="top" id='_label' width='12.5%' scope="col">
+&nbsp;
+</td>
+{counter name="fieldsUsed"}
+
+<td valign="top" width='37.5%' >
+</tr>
+{/capture}
+{if $fieldsUsed > 0 }
+{$tableRow}
+{/if}
+</table>
+<script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() {ldelim} initPanel(3, 'expanded'); {rdelim}); </script>
+</div>
+{if $panelFieldCount == 0}
+<script>document.getElementById("LBL_EDITVIEW_PANEL1").style.display='none';</script>
+{/if}
 </div></div>
 
 <script language="javascript">
@@ -591,37 +672,40 @@ addToValidate('EditView', 'e_accept_status_fields', 'relate', false,'{/literal}{
 addToValidate('EditView', 'event_accept_status', 'enum', false,'{/literal}{sugar_translate label='LBL_LIST_ACCEPT_STATUS_EVENT' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'event_status_id', 'varchar', false,'{/literal}{sugar_translate label='LBL_LIST_ACCEPT_STATUS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'produkt1_c', 'relate', false,'{/literal}{sugar_translate label='LBL_PRODUKT1' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'preis3_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS3' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'menge3_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE3_C' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'menge_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'produkt6_c', 'relate', false,'{/literal}{sugar_translate label='LBL_PRODUKT6_C' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'preis6_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS6' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'menge2_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE2' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'preis4_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS4' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'line_items_c', 'relate', false,'{/literal}{sugar_translate label='LBL_LINE_ITEMS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'joomla_account_id', 'varchar', false,'{/literal}{sugar_translate label='LBL_JOOMLA_ACCOUNT_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'portal_account_disabled', 'bool', false,'{/literal}{sugar_translate label='LBL_PORTAL_ACCOUNT_DISABLED' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'joomla_account_access', 'varchar', false,'{/literal}{sugar_translate label='LBL_JOOMLA_ACCOUNT_ACCESS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'portal_user_type', 'enum', false,'{/literal}{sugar_translate label='LBL_PORTAL_USER_TYPE' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'preis5_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS5' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'produkt2_c', 'relate', false,'{/literal}{sugar_translate label='LBL_PRODUKT2_C' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'preis2_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS2' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'produkt4_c', 'relate', false,'{/literal}{sugar_translate label='LBL_PRODUKT4_C' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'menge6_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE6' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'produkt5_c', 'relate', false,'{/literal}{sugar_translate label='LBL_PRODUKT5_C' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'preis_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'menge5_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE5' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'menge4_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE4' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'aos_products_id1_c', 'id', false,'{/literal}{sugar_translate label='LBL_PRODUKT2_C_AOS_PRODUCTS_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'aos_products_id2_c', 'id', false,'{/literal}{sugar_translate label='LBL_PRODUKT3_C_AOS_PRODUCTS_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'aos_products_id3_c', 'id', false,'{/literal}{sugar_translate label='LBL_PRODUKT4_C_AOS_PRODUCTS_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'aos_products_id4_c', 'id', false,'{/literal}{sugar_translate label='LBL_PRODUKT5_C_AOS_PRODUCTS_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'aos_products_id5_c', 'id', false,'{/literal}{sugar_translate label='LBL_PRODUKT6_C_AOS_PRODUCTS_ID' module='Contacts' for_js=true}{literal}' );
+addToValidate('EditView', 'aos_products_quotes_id_c', 'id', false,'{/literal}{sugar_translate label='LBL_LINE_ITEMS_AOS_PRODUCTS_QUOTES_ID' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_address_c', 'varchar', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_ADDRESS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_geocode_status_c', 'varchar', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_GEOCODE_STATUS' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_lat_c', 'float', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_LAT' module='Contacts' for_js=true}{literal}' );
 addToValidate('EditView', 'jjwg_maps_lng_c', 'float', false,'{/literal}{sugar_translate label='LBL_JJWG_MAPS_LNG' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'menge3_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE3_C' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'menge4_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE4' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'menge5_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE5' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'menge6_c', 'int', false,'{/literal}{sugar_translate label='LBL_MENGE6' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'preis3_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS3' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'preis4_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS4' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'preis5_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS5' module='Contacts' for_js=true}{literal}' );
-addToValidate('EditView', 'preis6_c', 'float', false,'{/literal}{sugar_translate label='LBL_PREIS6' module='Contacts' for_js=true}{literal}' );
 addToValidateBinaryDependency('EditView', 'assigned_user_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_ASSIGNED_TO' module='Contacts' for_js=true}{literal}', 'assigned_user_id' );
 addToValidateBinaryDependency('EditView', 'account_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_ACCOUNT_NAME' module='Contacts' for_js=true}{literal}', 'account_id' );
 addToValidateBinaryDependency('EditView', 'produkt1_c', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_PRODUKT1' module='Contacts' for_js=true}{literal}', 'aos_products_id_c' );
+addToValidateBinaryDependency('EditView', 'line_items_c', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_LINE_ITEMS' module='Contacts' for_js=true}{literal}', 'aos_products_quotes_id_c' );
 addToValidateBinaryDependency('EditView', 'produkt2_c', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Contacts' for_js=true}{literal}: {/literal}{sugar_translate label='LBL_PRODUKT2_C' module='Contacts' for_js=true}{literal}', 'aos_products_id_c' );
-</script><script language="javascript">if(typeof sqs_objects == 'undefined'){var sqs_objects = new Array;}sqs_objects['EditView_account_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id","billing_address_street","billing_address_city","billing_address_state","billing_address_postalcode","billing_address_country","phone_office"],"populate_list":["EditView_account_name","account_id","primary_address_street","primary_address_city","primary_address_state","primary_address_postalcode","primary_address_country","phone_work"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_produkt1_c']={"form":"EditView","method":"query","modules":["AOS_Products"],"group":"or","field_list":["name","id"],"populate_list":["produkt1_c","aos_products_id_c"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_produkt2_c']={"form":"EditView","method":"query","modules":["AOS_Products"],"group":"or","field_list":["name","id"],"populate_list":["produkt2_c","aos_products_id_c"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};</script>{/literal}
+</script><script language="javascript">if(typeof sqs_objects == 'undefined'){var sqs_objects = new Array;}sqs_objects['EditView_account_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id","billing_address_street","billing_address_city","billing_address_state","billing_address_postalcode","billing_address_country","phone_office"],"populate_list":["EditView_account_name","account_id","primary_address_street","primary_address_city","primary_address_state","primary_address_postalcode","primary_address_country","phone_work"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_produkt1_c']={"form":"EditView","method":"query","modules":["AOS_Products"],"group":"or","field_list":["name","id"],"populate_list":["produkt1_c","aos_products_id_c"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_produkt2_c']={"form":"EditView","method":"query","modules":["AOS_Products"],"group":"or","field_list":["name","id"],"populate_list":["produkt2_c","aos_products_id_c"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_line_items_c']={"form":"EditView","method":"query","modules":["AOS_Products_Quotes"],"group":"or","field_list":["name","id"],"populate_list":["line_items_c","aos_products_quotes_id_c"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};</script>{/literal}

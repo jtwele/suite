@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2015-05-26 02:16:22
+<?php /* Smarty version 2.6.11, created on 2015-05-26 03:20:10
          compiled from cache/modules/Contacts/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Contacts/DetailView.tpl', 33, false),array('function', 'counter', 'cache/modules/Contacts/DetailView.tpl', 38, false),array('function', 'sugar_getimagepath', 'cache/modules/Contacts/DetailView.tpl', 41, false),array('function', 'sugar_translate', 'cache/modules/Contacts/DetailView.tpl', 44, false),array('function', 'sugar_getimage', 'cache/modules/Contacts/DetailView.tpl', 78, false),array('function', 'sugar_phone', 'cache/modules/Contacts/DetailView.tpl', 124, false),array('function', 'sugar_ajax_url', 'cache/modules/Contacts/DetailView.tpl', 195, false),array('modifier', 'strip_semicolon', 'cache/modules/Contacts/DetailView.tpl', 58, false),array('modifier', 'escape', 'cache/modules/Contacts/DetailView.tpl', 242, false),array('modifier', 'url2html', 'cache/modules/Contacts/DetailView.tpl', 242, false),array('modifier', 'nl2br', 'cache/modules/Contacts/DetailView.tpl', 242, false),array('modifier', 'strip_tags', 'cache/modules/Contacts/DetailView.tpl', 248, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Contacts/DetailView.tpl', 33, false),array('function', 'sugar_translate', 'cache/modules/Contacts/DetailView.tpl', 40, false),array('function', 'counter', 'cache/modules/Contacts/DetailView.tpl', 48, false),array('function', 'sugar_phone', 'cache/modules/Contacts/DetailView.tpl', 114, false),array('function', 'sugar_ajax_url', 'cache/modules/Contacts/DetailView.tpl', 185, false),array('function', 'sugar_number_format', 'cache/modules/Contacts/DetailView.tpl', 312, false),array('function', 'sugar_getimagepath', 'cache/modules/Contacts/DetailView.tpl', 414, false),array('function', 'sugar_getjspath', 'cache/modules/Contacts/DetailView.tpl', 484, false),array('modifier', 'strip_semicolon', 'cache/modules/Contacts/DetailView.tpl', 58, false),array('modifier', 'escape', 'cache/modules/Contacts/DetailView.tpl', 215, false),array('modifier', 'url2html', 'cache/modules/Contacts/DetailView.tpl', 215, false),array('modifier', 'nl2br', 'cache/modules/Contacts/DetailView.tpl', 215, false),array('modifier', 'strip_tags', 'cache/modules/Contacts/DetailView.tpl', 221, false),)), $this); ?>
 
 
 <script language="javascript">
@@ -71,24 +71,23 @@ SUGAR.util.doWhen(function(){
 </table><?php echo smarty_function_sugar_include(array('include' => $this->_tpl_vars['includes']), $this);?>
 
 <div id="Contacts_detailview_tabs"
+class="yui-navset detailview_tabs"
 >
-<div >
+
+<ul class="yui-nav">
+
+<li><a id="tab0" href="javascript:void(0)"><em><?php echo smarty_function_sugar_translate(array('label' => 'LBL_CONTACT_INFORMATION','module' => 'Contacts'), $this);?>
+</em></a></li>
+
+<li><a id="tab1" href="javascript:void(0)"><em><?php echo smarty_function_sugar_translate(array('label' => 'LBL_PANEL_ADVANCED','module' => 'Contacts'), $this);?>
+</em></a></li>
+
+</ul>
+<div class="yui-content">
+<div id='tabcontent0'>
 <div id='detailpanel_1' class='detail view  detail508 expanded'>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount','start' => 0,'print' => false,'assign' => 'panelFieldCount'), $this);?>
 
-<h4>
-<a href="javascript:void(0)" class="collapseLink" onclick="collapsePanel(1);">
-<img border="0" id="detailpanel_1_img_hide" src="<?php echo smarty_function_sugar_getimagepath(array('file' => "basic_search.gif"), $this);?>
-"></a>
-<a href="javascript:void(0)" class="expandLink" onclick="expandPanel(1);">
-<img border="0" id="detailpanel_1_img_show" src="<?php echo smarty_function_sugar_getimagepath(array('file' => "advanced_search.gif"), $this);?>
-"></a>
-<?php echo smarty_function_sugar_translate(array('label' => 'LBL_CONTACT_INFORMATION','module' => 'Contacts'), $this);?>
-
-<script>
-document.getElementById('detailpanel_1').className += ' expanded';
-</script>
-</h4>
 <table id='LBL_CONTACT_INFORMATION' class="panelContainer" cellspacing='<?php echo $this->_tpl_vars['gridline']; ?>
 '>
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
@@ -100,40 +99,25 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 <td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['full_name']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_NAME','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php if (! $this->_tpl_vars['fields']['first_name']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_FIRST_NAME','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
 <?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 <?php endif; ?>
 </td>
 <td width='37.5%' colspan='3' >
-<?php if (! $this->_tpl_vars['fields']['full_name']['hidden']): ?>
+<?php if (! $this->_tpl_vars['fields']['first_name']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<?php if (strlen ( $this->_tpl_vars['fields']['full_name']['value'] ) <= 0): ?>
-<?php $this->assign('value', $this->_tpl_vars['fields']['full_name']['default_value']); ?>
+<?php if (strlen ( $this->_tpl_vars['fields']['first_name']['value'] ) <= 0): ?>
+<?php $this->assign('value', $this->_tpl_vars['fields']['first_name']['default_value']); ?>
 <?php else: ?>
-<?php $this->assign('value', $this->_tpl_vars['fields']['full_name']['value']); ?>
-<?php endif; ?>
-<form name="vcard" action="index.php" style="display: inline;">
-<span id='<?php echo $this->_tpl_vars['fields']['full_name']['name']; ?>
-'><?php echo $this->_tpl_vars['fields']['full_name']['value']; ?>
+<?php $this->assign('value', $this->_tpl_vars['fields']['first_name']['value']); ?>
+<?php endif; ?> 
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['first_name']['name']; ?>
+"><?php echo $this->_tpl_vars['fields']['first_name']['value']; ?>
 </span>
-&nbsp;&nbsp;
-<input type="hidden" name="action" value="vCard" />
-<input type="hidden" name="record" value="<?php echo $this->_tpl_vars['fields']['id']['value']; ?>
-" />
-<input type="hidden" name="module" value="<?php echo $this->_tpl_vars['module']; ?>
-" />
-<input type="hidden" name="to_pdf" value="true" />
-<span class="id-ff">
-<button type="submit" name="vCardButton" id="btn_vCardButton" value="<?php echo $this->_tpl_vars['APP']['LBL_VCARD']; ?>
-" title="<?php echo $this->_tpl_vars['APP']['LBL_VCARD']; ?>
-" class="button"><?php echo smarty_function_sugar_getimage(array('alt' => $this->_tpl_vars['app_strings']['LBL_ID_FF_VCARD'],'name' => "id-ff-vcard",'ext' => ".png",'other_attributes' => ''), $this);?>
-</button>
-</span>
-</form>
 <?php endif; ?>
 </td>
 </tr>
@@ -151,24 +135,24 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 <td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['title']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_TITLE','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php if (! $this->_tpl_vars['fields']['last_name']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_LAST_NAME','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
 <?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 <?php endif; ?>
 </td>
 <td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['title']['hidden']): ?>
+<?php if (! $this->_tpl_vars['fields']['last_name']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<?php if (strlen ( $this->_tpl_vars['fields']['title']['value'] ) <= 0): ?>
-<?php $this->assign('value', $this->_tpl_vars['fields']['title']['default_value']); ?>
+<?php if (strlen ( $this->_tpl_vars['fields']['last_name']['value'] ) <= 0): ?>
+<?php $this->assign('value', $this->_tpl_vars['fields']['last_name']['default_value']); ?>
 <?php else: ?>
-<?php $this->assign('value', $this->_tpl_vars['fields']['title']['value']); ?>
+<?php $this->assign('value', $this->_tpl_vars['fields']['last_name']['value']); ?>
 <?php endif; ?> 
-<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['title']['name']; ?>
-"><?php echo $this->_tpl_vars['fields']['title']['value']; ?>
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['last_name']['name']; ?>
+"><?php echo $this->_tpl_vars['fields']['last_name']['value']; ?>
 </span>
 <?php endif; ?>
 </td>
@@ -208,24 +192,24 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 <td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['department']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DEPARTMENT','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php if (! $this->_tpl_vars['fields']['title']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_TITLE','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
 <?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 <?php endif; ?>
 </td>
 <td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['department']['hidden']): ?>
+<?php if (! $this->_tpl_vars['fields']['title']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<?php if (strlen ( $this->_tpl_vars['fields']['department']['value'] ) <= 0): ?>
-<?php $this->assign('value', $this->_tpl_vars['fields']['department']['default_value']); ?>
+<?php if (strlen ( $this->_tpl_vars['fields']['title']['value'] ) <= 0): ?>
+<?php $this->assign('value', $this->_tpl_vars['fields']['title']['default_value']); ?>
 <?php else: ?>
-<?php $this->assign('value', $this->_tpl_vars['fields']['department']['value']); ?>
+<?php $this->assign('value', $this->_tpl_vars['fields']['title']['value']); ?>
 <?php endif; ?> 
-<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['department']['name']; ?>
-"><?php echo $this->_tpl_vars['fields']['department']['value']; ?>
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['title']['name']; ?>
+"><?php echo $this->_tpl_vars['fields']['title']['value']; ?>
 </span>
 <?php endif; ?>
 </td>
@@ -271,7 +255,7 @@ document.getElementById('detailpanel_1').className += ' expanded';
 :
 <?php endif; ?>
 </td>
-<td width='37.5%'  >
+<td width='37.5%' colspan='3' >
 <?php if (! $this->_tpl_vars['fields']['account_name']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
@@ -285,27 +269,6 @@ document.getElementById('detailpanel_1').className += ' expanded';
 </span>
 <?php if (! empty ( $this->_tpl_vars['fields']['account_id']['value'] )): ?></a><?php endif; ?>
 <?php if (! empty ( $this->_tpl_vars['fields']['account_id']['value'] )): ?>
-<?php endif; ?>
-<?php endif; ?>
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['phone_fax']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_FAX_PHONE','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  class="phone">
-<?php if (! $this->_tpl_vars['fields']['phone_fax']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<?php if (! empty ( $this->_tpl_vars['fields']['phone_fax']['value'] )): ?>
-<?php $this->assign('phone_value', $this->_tpl_vars['fields']['phone_fax']['value']); ?>
-<?php echo smarty_function_sugar_phone(array('value' => $this->_tpl_vars['phone_value'],'usa_format' => '0'), $this);?>
-
 <?php endif; ?>
 <?php endif; ?>
 </td>
@@ -330,7 +293,7 @@ document.getElementById('detailpanel_1').className += ' expanded';
 :
 <?php endif; ?>
 </td>
-<td width='37.5%'  >
+<td width='37.5%' colspan='3' >
 <?php if (! $this->_tpl_vars['fields']['primary_address_street']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
@@ -359,50 +322,6 @@ document.getElementById('detailpanel_1').className += ' expanded';
 </td>
 <td class='dataField' width='1%'>
 <?php echo $this->_tpl_vars['custom_code_primary']; ?>
-
-</td>
-</tr>
-</table>
-<?php endif; ?>
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['alt_address_street']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_ALTERNATE_ADDRESS','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['alt_address_street']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<table border='0' cellpadding='0' cellspacing='0' width='100%'>
-<tr>
-<td width='99%'>
-<input type="hidden" class="sugar_field" id="alt_address_street" value="<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_street']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-">
-<input type="hidden" class="sugar_field" id="alt_address_city" value="<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_city']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-">
-<input type="hidden" class="sugar_field" id="alt_address_state" value="<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_state']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-">
-<input type="hidden" class="sugar_field" id="alt_address_country" value="<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_country']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-">
-<input type="hidden" class="sugar_field" id="alt_address_postalcode" value="<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_postalcode']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-">
-<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_street']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-<br>
-<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_city']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
- <?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_state']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('strip_tags', true, $_tmp) : smarty_modifier_strip_tags($_tmp)))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-&nbsp;&nbsp;<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_postalcode']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('strip_tags', true, $_tmp) : smarty_modifier_strip_tags($_tmp)))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-<br>
-<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['alt_address_country']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-
-</td>
-<td class='dataField' width='1%'>
-<?php echo $this->_tpl_vars['custom_code_alt']; ?>
 
 </td>
 </tr>
@@ -446,70 +365,15 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <?php echo $this->_tpl_vars['tableRow']; ?>
 
 <?php endif; ?>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
-
-<?php echo smarty_function_counter(array('name' => 'fieldsHidden','start' => 0,'print' => false,'assign' => 'fieldsHidden'), $this);?>
-
-<?php ob_start(); ?>
-<tr>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['description']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DESCRIPTION','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['description']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<span class="sugar_field" id="<?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['description']['name'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-"><?php echo ((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['fields']['description']['value'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'htmlentitydecode') : smarty_modifier_escape($_tmp, 'htmlentitydecode')))) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')))) ? $this->_run_mod_handler('url2html', true, $_tmp) : url2html($_tmp)))) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
-</span>
-<?php endif; ?>
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['aop_case_updates_contacts_1_name']['hidden']): ?>
-&nbsp;
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['aop_case_updates_contacts_1_name']['hidden']): ?>
-<?php endif; ?>
-</td>
-</tr>
-<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
-<?php if ($this->_tpl_vars['fieldsUsed'] > 0 && $this->_tpl_vars['fieldsUsed'] != $this->_tpl_vars['fieldsHidden']): ?>
-<?php echo $this->_tpl_vars['tableRow']; ?>
-
-<?php endif; ?>
 </table>
-<script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() { initPanel(1, 'expanded'); }); </script>
 </div>
 <?php if ($this->_tpl_vars['panelFieldCount'] == 0): ?>
 <script>document.getElementById("LBL_CONTACT_INFORMATION").style.display='none';</script>
 <?php endif; ?>
+</div>    <div id='tabcontent1'>
 <div id='detailpanel_2' class='detail view  detail508 expanded'>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount','start' => 0,'print' => false,'assign' => 'panelFieldCount'), $this);?>
 
-<h4>
-<a href="javascript:void(0)" class="collapseLink" onclick="collapsePanel(2);">
-<img border="0" id="detailpanel_2_img_hide" src="<?php echo smarty_function_sugar_getimagepath(array('file' => "basic_search.gif"), $this);?>
-"></a>
-<a href="javascript:void(0)" class="expandLink" onclick="expandPanel(2);">
-<img border="0" id="detailpanel_2_img_show" src="<?php echo smarty_function_sugar_getimagepath(array('file' => "advanced_search.gif"), $this);?>
-"></a>
-<?php echo smarty_function_sugar_translate(array('label' => 'LBL_PANEL_ADVANCED','module' => 'Contacts'), $this);?>
-
-<script>
-document.getElementById('detailpanel_2').className += ' expanded';
-</script>
-</h4>
 <table id='LBL_PANEL_ADVANCED' class="panelContainer" cellspacing='<?php echo $this->_tpl_vars['gridline']; ?>
 '>
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
@@ -521,153 +385,169 @@ document.getElementById('detailpanel_2').className += ' expanded';
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 <td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['report_to_name']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_REPORTS_TO','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['report_to_name']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<?php if (! empty ( $this->_tpl_vars['fields']['reports_to_id']['value'] )): ?>
-<?php ob_start(); ?>index.php?module=Contacts&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['reports_to_id']['value'];  $this->_smarty_vars['capture']['default'] = ob_get_contents();  $this->assign('detail_url', ob_get_contents());ob_end_clean(); ?>
-<a href="<?php echo smarty_function_sugar_ajax_url(array('url' => $this->_tpl_vars['detail_url']), $this);?>
-"><?php endif; ?>
-<span id="reports_to_id" class="sugar_field" data-id-value="<?php echo $this->_tpl_vars['fields']['reports_to_id']['value']; ?>
-"><?php echo $this->_tpl_vars['fields']['report_to_name']['value']; ?>
-</span>
-<?php if (! empty ( $this->_tpl_vars['fields']['reports_to_id']['value'] )): ?></a><?php endif; ?>
-<?php endif; ?>
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['sync_contact']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_SYNC_CONTACT','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['sync_contact']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<?php if (strval ( $this->_tpl_vars['fields']['sync_contact']['value'] ) == '1' || strval ( $this->_tpl_vars['fields']['sync_contact']['value'] ) == 'yes' || strval ( $this->_tpl_vars['fields']['sync_contact']['value'] ) == 'on'): ?> 
-<?php $this->assign('checked', 'CHECKED'); ?>
-<?php else: ?>
-<?php $this->assign('checked', ""); ?>
-<?php endif; ?>
-<input type="checkbox" class="checkbox" name="<?php echo $this->_tpl_vars['fields']['sync_contact']['name']; ?>
-" id="<?php echo $this->_tpl_vars['fields']['sync_contact']['name']; ?>
-" value="$fields.sync_contact.value" disabled="true" <?php echo $this->_tpl_vars['checked']; ?>
->
-<?php endif; ?>
-</td>
-</tr>
-<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
-<?php if ($this->_tpl_vars['fieldsUsed'] > 0 && $this->_tpl_vars['fieldsUsed'] != $this->_tpl_vars['fieldsHidden']): ?>
-<?php echo $this->_tpl_vars['tableRow']; ?>
-
-<?php endif; ?>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
-
-<?php echo smarty_function_counter(array('name' => 'fieldsHidden','start' => 0,'print' => false,'assign' => 'fieldsHidden'), $this);?>
-
-<?php ob_start(); ?>
-<tr>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['lead_source']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_LEAD_SOURCE','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['lead_source']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-
-<?php if (is_string ( $this->_tpl_vars['fields']['lead_source']['options'] )): ?>
-<input type="hidden" class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['lead_source']['name']; ?>
-" value="<?php echo $this->_tpl_vars['fields']['lead_source']['options']; ?>
-">
-<?php echo $this->_tpl_vars['fields']['lead_source']['options']; ?>
-
-<?php else: ?>
-<input type="hidden" class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['lead_source']['name']; ?>
-" value="<?php echo $this->_tpl_vars['fields']['lead_source']['value']; ?>
-">
-<?php echo $this->_tpl_vars['fields']['lead_source']['options'][$this->_tpl_vars['fields']['lead_source']['value']]; ?>
-
-<?php endif; ?>
-<?php endif; ?>
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['do_not_call']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DO_NOT_CALL','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['do_not_call']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<?php if (strval ( $this->_tpl_vars['fields']['do_not_call']['value'] ) == '1' || strval ( $this->_tpl_vars['fields']['do_not_call']['value'] ) == 'yes' || strval ( $this->_tpl_vars['fields']['do_not_call']['value'] ) == 'on'): ?> 
-<?php $this->assign('checked', 'CHECKED'); ?>
-<?php else: ?>
-<?php $this->assign('checked', ""); ?>
-<?php endif; ?>
-<input type="checkbox" class="checkbox" name="<?php echo $this->_tpl_vars['fields']['do_not_call']['name']; ?>
-" id="<?php echo $this->_tpl_vars['fields']['do_not_call']['name']; ?>
-" value="$fields.do_not_call.value" disabled="true" <?php echo $this->_tpl_vars['checked']; ?>
->
-<?php endif; ?>
-</td>
-</tr>
-<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
-<?php if ($this->_tpl_vars['fieldsUsed'] > 0 && $this->_tpl_vars['fieldsUsed'] != $this->_tpl_vars['fieldsHidden']): ?>
-<?php echo $this->_tpl_vars['tableRow']; ?>
-
-<?php endif; ?>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
-
-<?php echo smarty_function_counter(array('name' => 'fieldsHidden','start' => 0,'print' => false,'assign' => 'fieldsHidden'), $this);?>
-
-<?php ob_start(); ?>
-<tr>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['campaign_name']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_CAMPAIGN','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php if (! $this->_tpl_vars['fields']['produkt1_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_PRODUKT1','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
 <?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 <?php endif; ?>
 </td>
 <td width='37.5%' colspan='3' >
-<?php if (! $this->_tpl_vars['fields']['campaign_name']['hidden']): ?>
+<?php if (! $this->_tpl_vars['fields']['produkt1_c']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<?php if (! empty ( $this->_tpl_vars['fields']['campaign_id']['value'] )): ?>
-<?php ob_start(); ?>index.php?module=Campaigns&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['campaign_id']['value'];  $this->_smarty_vars['capture']['default'] = ob_get_contents();  $this->assign('detail_url', ob_get_contents());ob_end_clean(); ?>
+<?php if (! empty ( $this->_tpl_vars['fields']['aos_products_id_c']['value'] )): ?>
+<?php ob_start(); ?>index.php?module=AOS_Products&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['aos_products_id_c']['value'];  $this->_smarty_vars['capture']['default'] = ob_get_contents();  $this->assign('detail_url', ob_get_contents());ob_end_clean(); ?>
 <a href="<?php echo smarty_function_sugar_ajax_url(array('url' => $this->_tpl_vars['detail_url']), $this);?>
 "><?php endif; ?>
-<span id="campaign_id" class="sugar_field" data-id-value="<?php echo $this->_tpl_vars['fields']['campaign_id']['value']; ?>
-"><?php echo $this->_tpl_vars['fields']['campaign_name']['value']; ?>
+<span id="aos_products_id_c" class="sugar_field" data-id-value="<?php echo $this->_tpl_vars['fields']['aos_products_id_c']['value']; ?>
+"><?php echo $this->_tpl_vars['fields']['produkt1_c']['value']; ?>
 </span>
-<?php if (! empty ( $this->_tpl_vars['fields']['campaign_id']['value'] )): ?></a><?php endif; ?>
+<?php if (! empty ( $this->_tpl_vars['fields']['aos_products_id_c']['value'] )): ?></a><?php endif; ?>
+<?php endif; ?>
+</td>
+</tr>
+<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
+<?php if ($this->_tpl_vars['fieldsUsed'] > 0 && $this->_tpl_vars['fieldsUsed'] != $this->_tpl_vars['fieldsHidden']): ?>
+<?php echo $this->_tpl_vars['tableRow']; ?>
+
+<?php endif; ?>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
+
+<?php echo smarty_function_counter(array('name' => 'fieldsHidden','start' => 0,'print' => false,'assign' => 'fieldsHidden'), $this);?>
+
+<?php ob_start(); ?>
+<tr>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
+
+<td width='12.5%' scope="col">
+<?php if (! $this->_tpl_vars['fields']['menge_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_MENGE','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+<?php endif; ?>
+</td>
+<td width='37.5%'  >
+<?php if (! $this->_tpl_vars['fields']['menge_c']['hidden']): ?>
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['menge_c']['name']; ?>
+">
+<?php echo smarty_function_sugar_number_format(array('precision' => 0,'var' => $this->_tpl_vars['fields']['menge_c']['value']), $this);?>
+
+</span>
+<?php endif; ?>
+</td>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
+
+<td width='12.5%' scope="col">
+<?php if (! $this->_tpl_vars['fields']['preis_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_PREIS','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+<?php endif; ?>
+</td>
+<td width='37.5%'  >
+<?php if (! $this->_tpl_vars['fields']['preis_c']['hidden']): ?>
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['preis_c']['name']; ?>
+">
+<?php echo smarty_function_sugar_number_format(array('var' => $this->_tpl_vars['fields']['preis_c']['value'],'precision' => 2), $this);?>
+
+</span>
+<?php endif; ?>
+</td>
+</tr>
+<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
+<?php if ($this->_tpl_vars['fieldsUsed'] > 0 && $this->_tpl_vars['fieldsUsed'] != $this->_tpl_vars['fieldsHidden']): ?>
+<?php echo $this->_tpl_vars['tableRow']; ?>
+
+<?php endif; ?>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
+
+<?php echo smarty_function_counter(array('name' => 'fieldsHidden','start' => 0,'print' => false,'assign' => 'fieldsHidden'), $this);?>
+
+<?php ob_start(); ?>
+<tr>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
+
+<td width='12.5%' scope="col">
+<?php if (! $this->_tpl_vars['fields']['produkt2_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_PRODUKT2_C','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+<?php endif; ?>
+</td>
+<td width='37.5%' colspan='3' >
+<?php if (! $this->_tpl_vars['fields']['produkt2_c']['hidden']): ?>
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+
+<?php if (! empty ( $this->_tpl_vars['fields']['aos_products_id_c']['value'] )): ?>
+<?php ob_start(); ?>index.php?module=AOS_Products&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['aos_products_id_c']['value'];  $this->_smarty_vars['capture']['default'] = ob_get_contents();  $this->assign('detail_url', ob_get_contents());ob_end_clean(); ?>
+<a href="<?php echo smarty_function_sugar_ajax_url(array('url' => $this->_tpl_vars['detail_url']), $this);?>
+"><?php endif; ?>
+<span id="aos_products_id_c" class="sugar_field" data-id-value="<?php echo $this->_tpl_vars['fields']['aos_products_id_c']['value']; ?>
+"><?php echo $this->_tpl_vars['fields']['produkt2_c']['value']; ?>
+</span>
+<?php if (! empty ( $this->_tpl_vars['fields']['aos_products_id_c']['value'] )): ?></a><?php endif; ?>
+<?php endif; ?>
+</td>
+</tr>
+<?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
+<?php if ($this->_tpl_vars['fieldsUsed'] > 0 && $this->_tpl_vars['fieldsUsed'] != $this->_tpl_vars['fieldsHidden']): ?>
+<?php echo $this->_tpl_vars['tableRow']; ?>
+
+<?php endif; ?>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
+
+<?php echo smarty_function_counter(array('name' => 'fieldsHidden','start' => 0,'print' => false,'assign' => 'fieldsHidden'), $this);?>
+
+<?php ob_start(); ?>
+<tr>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
+
+<td width='12.5%' scope="col">
+<?php if (! $this->_tpl_vars['fields']['menge2_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_MENGE2','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+<?php endif; ?>
+</td>
+<td width='37.5%'  >
+<?php if (! $this->_tpl_vars['fields']['menge2_c']['hidden']): ?>
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['menge2_c']['name']; ?>
+">
+<?php echo smarty_function_sugar_number_format(array('precision' => 0,'var' => $this->_tpl_vars['fields']['menge2_c']['value']), $this);?>
+
+</span>
+<?php endif; ?>
+</td>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
+
+<td width='12.5%' scope="col">
+<?php if (! $this->_tpl_vars['fields']['preis2_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_PREIS2','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+<?php endif; ?>
+</td>
+<td width='37.5%'  >
+<?php if (! $this->_tpl_vars['fields']['preis2_c']['hidden']): ?>
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+
+<span class="sugar_field" id="<?php echo $this->_tpl_vars['fields']['preis2_c']['name']; ?>
+">
+<?php echo smarty_function_sugar_number_format(array('var' => $this->_tpl_vars['fields']['preis2_c']['value'],'precision' => 2), $this);?>
+
+</span>
 <?php endif; ?>
 </td>
 </tr>
@@ -677,7 +557,6 @@ document.getElementById('detailpanel_2').className += ' expanded';
 
 <?php endif; ?>
 </table>
-<script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() { initPanel(2, 'expanded'); }); </script>
 </div>
 <?php if ($this->_tpl_vars['panelFieldCount'] == 0): ?>
 <script>document.getElementById("LBL_PANEL_ADVANCED").style.display='none';</script>
@@ -692,13 +571,13 @@ document.getElementById('detailpanel_2').className += ' expanded';
 <a href="javascript:void(0)" class="expandLink" onclick="expandPanel(3);">
 <img border="0" id="detailpanel_3_img_show" src="<?php echo smarty_function_sugar_getimagepath(array('file' => "advanced_search.gif"), $this);?>
 "></a>
-<?php echo smarty_function_sugar_translate(array('label' => 'LBL_PANEL_ASSIGNMENT','module' => 'Contacts'), $this);?>
+<?php echo smarty_function_sugar_translate(array('label' => 'LBL_EDITVIEW_PANEL1','module' => 'Contacts'), $this);?>
 
 <script>
 document.getElementById('detailpanel_3').className += ' expanded';
 </script>
 </h4>
-<table id='LBL_PANEL_ASSIGNMENT' class="panelContainer" cellspacing='<?php echo $this->_tpl_vars['gridline']; ?>
+<table id='LBL_EDITVIEW_PANEL1' class="panelContainer" cellspacing='<?php echo $this->_tpl_vars['gridline']; ?>
 '>
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed','start' => 0,'print' => false,'assign' => 'fieldsUsed'), $this);?>
 
@@ -709,39 +588,25 @@ document.getElementById('detailpanel_3').className += ' expanded';
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 <td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['assigned_user_name']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_ASSIGNED_TO_NAME','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
+<?php if (! $this->_tpl_vars['fields']['line_items_c']['hidden']): ?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_LINE_ITEMS','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
 <?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 <?php endif; ?>
 </td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['assigned_user_name']['hidden']): ?>
+<td width='37.5%' colspan='3' >
+<?php if (! $this->_tpl_vars['fields']['line_items_c']['hidden']): ?>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<span id="assigned_user_id" class="sugar_field" data-id-value="<?php echo $this->_tpl_vars['fields']['assigned_user_id']['value']; ?>
-"><?php echo $this->_tpl_vars['fields']['assigned_user_name']['value']; ?>
+<?php if (! empty ( $this->_tpl_vars['fields']['aos_products_quotes_id_c']['value'] )): ?>
+<?php ob_start(); ?>index.php?module=AOS_Products_Quotes&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['aos_products_quotes_id_c']['value'];  $this->_smarty_vars['capture']['default'] = ob_get_contents();  $this->assign('detail_url', ob_get_contents());ob_end_clean(); ?>
+<a href="<?php echo smarty_function_sugar_ajax_url(array('url' => $this->_tpl_vars['detail_url']), $this);?>
+"><?php endif; ?>
+<span id="aos_products_quotes_id_c" class="sugar_field" data-id-value="<?php echo $this->_tpl_vars['fields']['aos_products_quotes_id_c']['value']; ?>
+"><?php echo $this->_tpl_vars['fields']['line_items_c']['value']; ?>
 </span>
-<?php endif; ?>
-</td>
-<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
-
-<td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['date_modified']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DATE_MODIFIED','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
-</td>
-<td width='37.5%'  >
-<?php if (! $this->_tpl_vars['fields']['date_modified']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-<span id="date_modified" class="sugar_field"><?php echo $this->_tpl_vars['fields']['date_modified']['value']; ?>
- <?php echo $this->_tpl_vars['APP']['LBL_BY']; ?>
- <?php echo $this->_tpl_vars['fields']['modified_by_name']['value']; ?>
-</span>
+<?php if (! empty ( $this->_tpl_vars['fields']['aos_products_quotes_id_c']['value'] )): ?></a><?php endif; ?>
 <?php endif; ?>
 </td>
 </tr>
@@ -759,21 +624,16 @@ document.getElementById('detailpanel_3').className += ' expanded';
 <?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
 <td width='12.5%' scope="col">
-<?php if (! $this->_tpl_vars['fields']['date_entered']['hidden']): ?>
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DATE_ENTERED','module' => 'Contacts'), $this); $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean(); ?>
-<?php echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
-<?php endif; ?>
+&nbsp;
 </td>
-<td width='37.5%' colspan='3' >
-<?php if (! $this->_tpl_vars['fields']['date_entered']['hidden']): ?>
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+<td width='37.5%'  >
+</td>
+<?php echo smarty_function_counter(array('name' => 'fieldsUsed'), $this);?>
 
-<span id="date_entered" class="sugar_field"><?php echo $this->_tpl_vars['fields']['date_entered']['value']; ?>
- <?php echo $this->_tpl_vars['APP']['LBL_BY']; ?>
- <?php echo $this->_tpl_vars['fields']['created_by_name']['value']; ?>
-</span>
-<?php endif; ?>
+<td width='12.5%' scope="col">
+&nbsp;
+</td>
+<td width='37.5%'  >
 </td>
 </tr>
 <?php $this->_smarty_vars['capture']['tr'] = ob_get_contents();  $this->assign('tableRow', ob_get_contents());ob_end_clean(); ?>
@@ -785,12 +645,20 @@ document.getElementById('detailpanel_3').className += ' expanded';
 <script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() { initPanel(3, 'expanded'); }); </script>
 </div>
 <?php if ($this->_tpl_vars['panelFieldCount'] == 0): ?>
-<script>document.getElementById("LBL_PANEL_ASSIGNMENT").style.display='none';</script>
+<script>document.getElementById("LBL_EDITVIEW_PANEL1").style.display='none';</script>
 <?php endif; ?>
+</div>
 </div>
 </div>
 
 </form>
 <script>SUGAR.util.doWhen("document.getElementById('form') != null",
 function(){SUGAR.util.buildAccessKeyLabels();});
+</script><script type='text/javascript' src='<?php echo smarty_function_sugar_getjspath(array('file' => 'include/javascript/popup_helper.js'), $this);?>
+'></script>
+<script type="text/javascript" src="<?php echo smarty_function_sugar_getjspath(array('file' => 'cache/include/javascript/sugar_grp_yui_widgets.js'), $this);?>
+"></script>
+<script type="text/javascript">
+var Contacts_detailview_tabs = new YAHOO.widget.TabView("Contacts_detailview_tabs");
+Contacts_detailview_tabs.selectTab(0);
 </script>

@@ -32,20 +32,20 @@ SUGAR.util.doWhen(function(){
 </tr>
 </table>{sugar_include include=$includes}
 <div id="Contacts_detailview_tabs"
+class="yui-navset detailview_tabs"
 >
-<div >
+
+<ul class="yui-nav">
+
+<li><a id="tab0" href="javascript:void(0)"><em>{sugar_translate label='LBL_CONTACT_INFORMATION' module='Contacts'}</em></a></li>
+
+<li><a id="tab1" href="javascript:void(0)"><em>{sugar_translate label='LBL_PANEL_ADVANCED' module='Contacts'}</em></a></li>
+
+</ul>
+<div class="yui-content">
+<div id='tabcontent0'>
 <div id='detailpanel_1' class='detail view  detail508 expanded'>
 {counter name="panelFieldCount" start=0 print=false assign="panelFieldCount"}
-<h4>
-<a href="javascript:void(0)" class="collapseLink" onclick="collapsePanel(1);">
-<img border="0" id="detailpanel_1_img_hide" src="{sugar_getimagepath file="basic_search.gif"}"></a>
-<a href="javascript:void(0)" class="expandLink" onclick="expandPanel(1);">
-<img border="0" id="detailpanel_1_img_show" src="{sugar_getimagepath file="advanced_search.gif"}"></a>
-{sugar_translate label='LBL_CONTACT_INFORMATION' module='Contacts'}
-<script>
-document.getElementById('detailpanel_1').className += ' expanded';
-</script>
-</h4>
 <table id='LBL_CONTACT_INFORMATION' class="panelContainer" cellspacing='{$gridline}'>
 {counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
 {counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
@@ -53,31 +53,21 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <tr>
 {counter name="fieldsUsed"}
 <td width='12.5%' scope="col">
-{if !$fields.full_name.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_NAME' module='Contacts'}{/capture}
+{if !$fields.first_name.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_FIRST_NAME' module='Contacts'}{/capture}
 {$label|strip_semicolon}:
 {/if}
 </td>
 <td width='37.5%' colspan='3' >
-{if !$fields.full_name.hidden}
+{if !$fields.first_name.hidden}
 {counter name="panelFieldCount"}
 
-{if strlen($fields.full_name.value) <= 0}
-{assign var="value" value=$fields.full_name.default_value }
+{if strlen($fields.first_name.value) <= 0}
+{assign var="value" value=$fields.first_name.default_value }
 {else}
-{assign var="value" value=$fields.full_name.value }
-{/if}
-<form name="vcard" action="index.php" style="display: inline;">
-<span id='{$fields.full_name.name}'>{$fields.full_name.value}</span>
-&nbsp;&nbsp;
-<input type="hidden" name="action" value="vCard" />
-<input type="hidden" name="record" value="{$fields.id.value}" />
-<input type="hidden" name="module" value="{$module}" />
-<input type="hidden" name="to_pdf" value="true" />
-<span class="id-ff">
-<button type="submit" name="vCardButton" id="btn_vCardButton" value="{$APP.LBL_VCARD}" title="{$APP.LBL_VCARD}" class="button">{sugar_getimage alt=$app_strings.LBL_ID_FF_VCARD name="id-ff-vcard" ext=".png" other_attributes=''}</button>
-</span>
-</form>
+{assign var="value" value=$fields.first_name.value }
+{/if} 
+<span class="sugar_field" id="{$fields.first_name.name}">{$fields.first_name.value}</span>
 {/if}
 </td>
 </tr>
@@ -91,21 +81,21 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <tr>
 {counter name="fieldsUsed"}
 <td width='12.5%' scope="col">
-{if !$fields.title.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_TITLE' module='Contacts'}{/capture}
+{if !$fields.last_name.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_LAST_NAME' module='Contacts'}{/capture}
 {$label|strip_semicolon}:
 {/if}
 </td>
 <td width='37.5%'  >
-{if !$fields.title.hidden}
+{if !$fields.last_name.hidden}
 {counter name="panelFieldCount"}
 
-{if strlen($fields.title.value) <= 0}
-{assign var="value" value=$fields.title.default_value }
+{if strlen($fields.last_name.value) <= 0}
+{assign var="value" value=$fields.last_name.default_value }
 {else}
-{assign var="value" value=$fields.title.value }
+{assign var="value" value=$fields.last_name.value }
 {/if} 
-<span class="sugar_field" id="{$fields.title.name}">{$fields.title.value}</span>
+<span class="sugar_field" id="{$fields.last_name.name}">{$fields.last_name.value}</span>
 {/if}
 </td>
 {counter name="fieldsUsed"}
@@ -136,21 +126,21 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <tr>
 {counter name="fieldsUsed"}
 <td width='12.5%' scope="col">
-{if !$fields.department.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_DEPARTMENT' module='Contacts'}{/capture}
+{if !$fields.title.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_TITLE' module='Contacts'}{/capture}
 {$label|strip_semicolon}:
 {/if}
 </td>
 <td width='37.5%'  >
-{if !$fields.department.hidden}
+{if !$fields.title.hidden}
 {counter name="panelFieldCount"}
 
-{if strlen($fields.department.value) <= 0}
-{assign var="value" value=$fields.department.default_value }
+{if strlen($fields.title.value) <= 0}
+{assign var="value" value=$fields.title.default_value }
 {else}
-{assign var="value" value=$fields.department.value }
+{assign var="value" value=$fields.title.value }
 {/if} 
-<span class="sugar_field" id="{$fields.department.name}">{$fields.department.value}</span>
+<span class="sugar_field" id="{$fields.title.name}">{$fields.title.value}</span>
 {/if}
 </td>
 {counter name="fieldsUsed"}
@@ -186,7 +176,7 @@ document.getElementById('detailpanel_1').className += ' expanded';
 {$label|strip_semicolon}:
 {/if}
 </td>
-<td width='37.5%'  >
+<td width='37.5%' colspan='3' >
 {if !$fields.account_name.hidden}
 {counter name="panelFieldCount"}
 
@@ -196,23 +186,6 @@ document.getElementById('detailpanel_1').className += ' expanded';
 <span id="account_id" class="sugar_field" data-id-value="{$fields.account_id.value}">{$fields.account_name.value}</span>
 {if !empty($fields.account_id.value)}</a>{/if}
 {if !empty($fields.account_id.value)}
-{/if}
-{/if}
-</td>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.phone_fax.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_FAX_PHONE' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  class="phone">
-{if !$fields.phone_fax.hidden}
-{counter name="panelFieldCount"}
-
-{if !empty($fields.phone_fax.value)}
-{assign var="phone_value" value=$fields.phone_fax.value }
-{sugar_phone value=$phone_value usa_format="0"}
 {/if}
 {/if}
 </td>
@@ -232,7 +205,7 @@ document.getElementById('detailpanel_1').className += ' expanded';
 {$label|strip_semicolon}:
 {/if}
 </td>
-<td width='37.5%'  >
+<td width='37.5%' colspan='3' >
 {if !$fields.primary_address_street.hidden}
 {counter name="panelFieldCount"}
 
@@ -250,36 +223,6 @@ document.getElementById('detailpanel_1').className += ' expanded';
 </td>
 <td class='dataField' width='1%'>
 {$custom_code_primary}
-</td>
-</tr>
-</table>
-{/if}
-</td>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.alt_address_street.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_ALTERNATE_ADDRESS' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.alt_address_street.hidden}
-{counter name="panelFieldCount"}
-
-<table border='0' cellpadding='0' cellspacing='0' width='100%'>
-<tr>
-<td width='99%'>
-<input type="hidden" class="sugar_field" id="alt_address_street" value="{$fields.alt_address_street.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}">
-<input type="hidden" class="sugar_field" id="alt_address_city" value="{$fields.alt_address_city.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}">
-<input type="hidden" class="sugar_field" id="alt_address_state" value="{$fields.alt_address_state.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}">
-<input type="hidden" class="sugar_field" id="alt_address_country" value="{$fields.alt_address_country.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}">
-<input type="hidden" class="sugar_field" id="alt_address_postalcode" value="{$fields.alt_address_postalcode.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}">
-{$fields.alt_address_street.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}<br>
-{$fields.alt_address_city.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br} {$fields.alt_address_state.value|escape:'htmlentitydecode'|strip_tags|url2html|nl2br}&nbsp;&nbsp;{$fields.alt_address_postalcode.value|escape:'htmlentitydecode'|strip_tags|url2html|nl2br}<br>
-{$fields.alt_address_country.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}
-</td>
-<td class='dataField' width='1%'>
-{$custom_code_alt}
 </td>
 </tr>
 </table>
@@ -314,57 +257,14 @@ document.getElementById('detailpanel_1').className += ' expanded';
 {if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
 {$tableRow}
 {/if}
-{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
-{counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
-{capture name="tr" assign="tableRow"}
-<tr>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.description.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_DESCRIPTION' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.description.hidden}
-{counter name="panelFieldCount"}
-
-<span class="sugar_field" id="{$fields.description.name|escape:'html'|url2html|nl2br}">{$fields.description.value|escape:'htmlentitydecode'|escape:'html'|url2html|nl2br}</span>
-{/if}
-</td>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.aop_case_updates_contacts_1_name.hidden}
-&nbsp;
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.aop_case_updates_contacts_1_name.hidden}
-{/if}
-</td>
-</tr>
-{/capture}
-{if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
-{$tableRow}
-{/if}
 </table>
-<script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() {ldelim} initPanel(1, 'expanded'); {rdelim}); </script>
 </div>
 {if $panelFieldCount == 0}
 <script>document.getElementById("LBL_CONTACT_INFORMATION").style.display='none';</script>
 {/if}
+</div>    <div id='tabcontent1'>
 <div id='detailpanel_2' class='detail view  detail508 expanded'>
 {counter name="panelFieldCount" start=0 print=false assign="panelFieldCount"}
-<h4>
-<a href="javascript:void(0)" class="collapseLink" onclick="collapsePanel(2);">
-<img border="0" id="detailpanel_2_img_hide" src="{sugar_getimagepath file="basic_search.gif"}"></a>
-<a href="javascript:void(0)" class="expandLink" onclick="expandPanel(2);">
-<img border="0" id="detailpanel_2_img_show" src="{sugar_getimagepath file="advanced_search.gif"}"></a>
-{sugar_translate label='LBL_PANEL_ADVANCED' module='Contacts'}
-<script>
-document.getElementById('detailpanel_2').className += ' expanded';
-</script>
-</h4>
 <table id='LBL_PANEL_ADVANCED' class="panelContainer" cellspacing='{$gridline}'>
 {counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
 {counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
@@ -372,115 +272,129 @@ document.getElementById('detailpanel_2').className += ' expanded';
 <tr>
 {counter name="fieldsUsed"}
 <td width='12.5%' scope="col">
-{if !$fields.report_to_name.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_REPORTS_TO' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.report_to_name.hidden}
-{counter name="panelFieldCount"}
-
-{if !empty($fields.reports_to_id.value)}
-{capture assign="detail_url"}index.php?module=Contacts&action=DetailView&record={$fields.reports_to_id.value}{/capture}
-<a href="{sugar_ajax_url url=$detail_url}">{/if}
-<span id="reports_to_id" class="sugar_field" data-id-value="{$fields.reports_to_id.value}">{$fields.report_to_name.value}</span>
-{if !empty($fields.reports_to_id.value)}</a>{/if}
-{/if}
-</td>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.sync_contact.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_SYNC_CONTACT' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.sync_contact.hidden}
-{counter name="panelFieldCount"}
-
-{if strval($fields.sync_contact.value) == "1" || strval($fields.sync_contact.value) == "yes" || strval($fields.sync_contact.value) == "on"} 
-{assign var="checked" value="CHECKED"}
-{else}
-{assign var="checked" value=""}
-{/if}
-<input type="checkbox" class="checkbox" name="{$fields.sync_contact.name}" id="{$fields.sync_contact.name}" value="$fields.sync_contact.value" disabled="true" {$checked}>
-{/if}
-</td>
-</tr>
-{/capture}
-{if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
-{$tableRow}
-{/if}
-{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
-{counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
-{capture name="tr" assign="tableRow"}
-<tr>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.lead_source.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_LEAD_SOURCE' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.lead_source.hidden}
-{counter name="panelFieldCount"}
-
-
-{if is_string($fields.lead_source.options)}
-<input type="hidden" class="sugar_field" id="{$fields.lead_source.name}" value="{ $fields.lead_source.options }">
-{ $fields.lead_source.options }
-{else}
-<input type="hidden" class="sugar_field" id="{$fields.lead_source.name}" value="{ $fields.lead_source.value }">
-{ $fields.lead_source.options[$fields.lead_source.value]}
-{/if}
-{/if}
-</td>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.do_not_call.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_DO_NOT_CALL' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.do_not_call.hidden}
-{counter name="panelFieldCount"}
-
-{if strval($fields.do_not_call.value) == "1" || strval($fields.do_not_call.value) == "yes" || strval($fields.do_not_call.value) == "on"} 
-{assign var="checked" value="CHECKED"}
-{else}
-{assign var="checked" value=""}
-{/if}
-<input type="checkbox" class="checkbox" name="{$fields.do_not_call.name}" id="{$fields.do_not_call.name}" value="$fields.do_not_call.value" disabled="true" {$checked}>
-{/if}
-</td>
-</tr>
-{/capture}
-{if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
-{$tableRow}
-{/if}
-{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
-{counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
-{capture name="tr" assign="tableRow"}
-<tr>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.campaign_name.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_CAMPAIGN' module='Contacts'}{/capture}
+{if !$fields.produkt1_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_PRODUKT1' module='Contacts'}{/capture}
 {$label|strip_semicolon}:
 {/if}
 </td>
 <td width='37.5%' colspan='3' >
-{if !$fields.campaign_name.hidden}
+{if !$fields.produkt1_c.hidden}
 {counter name="panelFieldCount"}
 
-{if !empty($fields.campaign_id.value)}
-{capture assign="detail_url"}index.php?module=Campaigns&action=DetailView&record={$fields.campaign_id.value}{/capture}
+{if !empty($fields.aos_products_id_c.value)}
+{capture assign="detail_url"}index.php?module=AOS_Products&action=DetailView&record={$fields.aos_products_id_c.value}{/capture}
 <a href="{sugar_ajax_url url=$detail_url}">{/if}
-<span id="campaign_id" class="sugar_field" data-id-value="{$fields.campaign_id.value}">{$fields.campaign_name.value}</span>
-{if !empty($fields.campaign_id.value)}</a>{/if}
+<span id="aos_products_id_c" class="sugar_field" data-id-value="{$fields.aos_products_id_c.value}">{$fields.produkt1_c.value}</span>
+{if !empty($fields.aos_products_id_c.value)}</a>{/if}
+{/if}
+</td>
+</tr>
+{/capture}
+{if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
+{$tableRow}
+{/if}
+{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
+{counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
+{capture name="tr" assign="tableRow"}
+<tr>
+{counter name="fieldsUsed"}
+<td width='12.5%' scope="col">
+{if !$fields.menge_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_MENGE' module='Contacts'}{/capture}
+{$label|strip_semicolon}:
+{/if}
+</td>
+<td width='37.5%'  >
+{if !$fields.menge_c.hidden}
+{counter name="panelFieldCount"}
+
+<span class="sugar_field" id="{$fields.menge_c.name}">
+{sugar_number_format precision=0 var=$fields.menge_c.value}
+</span>
+{/if}
+</td>
+{counter name="fieldsUsed"}
+<td width='12.5%' scope="col">
+{if !$fields.preis_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_PREIS' module='Contacts'}{/capture}
+{$label|strip_semicolon}:
+{/if}
+</td>
+<td width='37.5%'  >
+{if !$fields.preis_c.hidden}
+{counter name="panelFieldCount"}
+
+<span class="sugar_field" id="{$fields.preis_c.name}">
+{sugar_number_format var=$fields.preis_c.value precision=2 }
+</span>
+{/if}
+</td>
+</tr>
+{/capture}
+{if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
+{$tableRow}
+{/if}
+{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
+{counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
+{capture name="tr" assign="tableRow"}
+<tr>
+{counter name="fieldsUsed"}
+<td width='12.5%' scope="col">
+{if !$fields.produkt2_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_PRODUKT2_C' module='Contacts'}{/capture}
+{$label|strip_semicolon}:
+{/if}
+</td>
+<td width='37.5%' colspan='3' >
+{if !$fields.produkt2_c.hidden}
+{counter name="panelFieldCount"}
+
+{if !empty($fields.aos_products_id_c.value)}
+{capture assign="detail_url"}index.php?module=AOS_Products&action=DetailView&record={$fields.aos_products_id_c.value}{/capture}
+<a href="{sugar_ajax_url url=$detail_url}">{/if}
+<span id="aos_products_id_c" class="sugar_field" data-id-value="{$fields.aos_products_id_c.value}">{$fields.produkt2_c.value}</span>
+{if !empty($fields.aos_products_id_c.value)}</a>{/if}
+{/if}
+</td>
+</tr>
+{/capture}
+{if $fieldsUsed > 0 && $fieldsUsed != $fieldsHidden}
+{$tableRow}
+{/if}
+{counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
+{counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
+{capture name="tr" assign="tableRow"}
+<tr>
+{counter name="fieldsUsed"}
+<td width='12.5%' scope="col">
+{if !$fields.menge2_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_MENGE2' module='Contacts'}{/capture}
+{$label|strip_semicolon}:
+{/if}
+</td>
+<td width='37.5%'  >
+{if !$fields.menge2_c.hidden}
+{counter name="panelFieldCount"}
+
+<span class="sugar_field" id="{$fields.menge2_c.name}">
+{sugar_number_format precision=0 var=$fields.menge2_c.value}
+</span>
+{/if}
+</td>
+{counter name="fieldsUsed"}
+<td width='12.5%' scope="col">
+{if !$fields.preis2_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_PREIS2' module='Contacts'}{/capture}
+{$label|strip_semicolon}:
+{/if}
+</td>
+<td width='37.5%'  >
+{if !$fields.preis2_c.hidden}
+{counter name="panelFieldCount"}
+
+<span class="sugar_field" id="{$fields.preis2_c.name}">
+{sugar_number_format var=$fields.preis2_c.value precision=2 }
+</span>
 {/if}
 </td>
 </tr>
@@ -489,7 +403,6 @@ document.getElementById('detailpanel_2').className += ' expanded';
 {$tableRow}
 {/if}
 </table>
-<script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() {ldelim} initPanel(2, 'expanded'); {rdelim}); </script>
 </div>
 {if $panelFieldCount == 0}
 <script>document.getElementById("LBL_PANEL_ADVANCED").style.display='none';</script>
@@ -501,41 +414,32 @@ document.getElementById('detailpanel_2').className += ' expanded';
 <img border="0" id="detailpanel_3_img_hide" src="{sugar_getimagepath file="basic_search.gif"}"></a>
 <a href="javascript:void(0)" class="expandLink" onclick="expandPanel(3);">
 <img border="0" id="detailpanel_3_img_show" src="{sugar_getimagepath file="advanced_search.gif"}"></a>
-{sugar_translate label='LBL_PANEL_ASSIGNMENT' module='Contacts'}
+{sugar_translate label='LBL_EDITVIEW_PANEL1' module='Contacts'}
 <script>
 document.getElementById('detailpanel_3').className += ' expanded';
 </script>
 </h4>
-<table id='LBL_PANEL_ASSIGNMENT' class="panelContainer" cellspacing='{$gridline}'>
+<table id='LBL_EDITVIEW_PANEL1' class="panelContainer" cellspacing='{$gridline}'>
 {counter name="fieldsUsed" start=0 print=false assign="fieldsUsed"}
 {counter name="fieldsHidden" start=0 print=false assign="fieldsHidden"}
 {capture name="tr" assign="tableRow"}
 <tr>
 {counter name="fieldsUsed"}
 <td width='12.5%' scope="col">
-{if !$fields.assigned_user_name.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_ASSIGNED_TO_NAME' module='Contacts'}{/capture}
+{if !$fields.line_items_c.hidden}
+{capture name="label" assign="label"}{sugar_translate label='LBL_LINE_ITEMS' module='Contacts'}{/capture}
 {$label|strip_semicolon}:
 {/if}
 </td>
-<td width='37.5%'  >
-{if !$fields.assigned_user_name.hidden}
+<td width='37.5%' colspan='3' >
+{if !$fields.line_items_c.hidden}
 {counter name="panelFieldCount"}
 
-<span id="assigned_user_id" class="sugar_field" data-id-value="{$fields.assigned_user_id.value}">{$fields.assigned_user_name.value}</span>
-{/if}
-</td>
-{counter name="fieldsUsed"}
-<td width='12.5%' scope="col">
-{if !$fields.date_modified.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_DATE_MODIFIED' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
-</td>
-<td width='37.5%'  >
-{if !$fields.date_modified.hidden}
-{counter name="panelFieldCount"}
-<span id="date_modified" class="sugar_field">{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}</span>
+{if !empty($fields.aos_products_quotes_id_c.value)}
+{capture assign="detail_url"}index.php?module=AOS_Products_Quotes&action=DetailView&record={$fields.aos_products_quotes_id_c.value}{/capture}
+<a href="{sugar_ajax_url url=$detail_url}">{/if}
+<span id="aos_products_quotes_id_c" class="sugar_field" data-id-value="{$fields.aos_products_quotes_id_c.value}">{$fields.line_items_c.value}</span>
+{if !empty($fields.aos_products_quotes_id_c.value)}</a>{/if}
 {/if}
 </td>
 </tr>
@@ -549,16 +453,15 @@ document.getElementById('detailpanel_3').className += ' expanded';
 <tr>
 {counter name="fieldsUsed"}
 <td width='12.5%' scope="col">
-{if !$fields.date_entered.hidden}
-{capture name="label" assign="label"}{sugar_translate label='LBL_DATE_ENTERED' module='Contacts'}{/capture}
-{$label|strip_semicolon}:
-{/if}
+&nbsp;
 </td>
-<td width='37.5%' colspan='3' >
-{if !$fields.date_entered.hidden}
-{counter name="panelFieldCount"}
-<span id="date_entered" class="sugar_field">{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}</span>
-{/if}
+<td width='37.5%'  >
+</td>
+{counter name="fieldsUsed"}
+<td width='12.5%' scope="col">
+&nbsp;
+</td>
+<td width='37.5%'  >
 </td>
 </tr>
 {/capture}
@@ -569,12 +472,18 @@ document.getElementById('detailpanel_3').className += ' expanded';
 <script type="text/javascript">SUGAR.util.doWhen("typeof initPanel == 'function'", function() {ldelim} initPanel(3, 'expanded'); {rdelim}); </script>
 </div>
 {if $panelFieldCount == 0}
-<script>document.getElementById("LBL_PANEL_ASSIGNMENT").style.display='none';</script>
+<script>document.getElementById("LBL_EDITVIEW_PANEL1").style.display='none';</script>
 {/if}
+</div>
 </div>
 </div>
 
 </form>
 <script>SUGAR.util.doWhen("document.getElementById('form') != null",
 function(){ldelim}SUGAR.util.buildAccessKeyLabels();{rdelim});
+</script><script type='text/javascript' src='{sugar_getjspath file='include/javascript/popup_helper.js'}'></script>
+<script type="text/javascript" src="{sugar_getjspath file='cache/include/javascript/sugar_grp_yui_widgets.js'}"></script>
+<script type="text/javascript">
+var Contacts_detailview_tabs = new YAHOO.widget.TabView("Contacts_detailview_tabs");
+Contacts_detailview_tabs.selectTab(0);
 </script>
