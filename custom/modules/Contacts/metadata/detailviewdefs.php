@@ -119,16 +119,6 @@ array (
           'newTab' => true,
           'panelDefault' => 'expanded',
         ),
-        'LBL_PANEL_ADVANCED' => 
-        array (
-          'newTab' => true,
-          'panelDefault' => 'expanded',
-        ),
-        'LBL_EDITVIEW_PANEL1' => 
-        array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
       ),
       'syncDetailEditViews' => true,
     ),
@@ -211,68 +201,6 @@ array (
             'studio' => 'false',
             'label' => 'LBL_EMAIL_ADDRESS',
           ),
-        ),
-      ),
-      'LBL_PANEL_ADVANCED' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'produkt1_c',
-            'studio' => 'visible',
-            'label' => 'LBL_PRODUKT1',
-            'tabindex' => '1',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'menge_c',
-            'label' => 'LBL_MENGE',
-            'tabindex' => '2',
-          ),
-          1 => 
-          array (
-            'name' => 'preis_c',
-            'label' => 'LBL_PREIS',
-            'tabindex' => '3',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'produkt2_c',
-            'studio' => 'visible',
-            'label' => 'LBL_PRODUKT2_C',
-            'tabindex' => '4',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'menge2_c',
-            'label' => 'LBL_MENGE2',
-            'tabindex' => '5',
-          ),
-          1 => 
-          array (
-            'name' => 'preis2_c',
-            'label' => 'LBL_PREIS2',
-            'tabindex' => '6',
-          ),
-        ),
-      ),
-      'lbl_editview_panel1' => 
-      array (
-        0 => 
-        array (
-        ),
-        1 => 
-        array (
         ),
       ),
     ),

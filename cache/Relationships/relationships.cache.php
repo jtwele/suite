@@ -8910,28 +8910,6 @@
     'relationship_role_column' => 'target_type',
     'relationship_role_column_value' => 'Contacts',
   ),
-  'contacts_aos_products_quotes' => 
-  array (
-    'name' => 'contacts_aos_products_quotes',
-    'lhs_module' => 'Contacts',
-    'lhs_table' => 'contacts',
-    'lhs_key' => 'id',
-    'rhs_module' => 'AOS_Products_Quotes',
-    'rhs_table' => 'aos_products_quotes',
-    'rhs_key' => 'parent_id',
-    'relationship_type' => 'one-to-many',
-  ),
-  'contacts_aos_line_item_groups' => 
-  array (
-    'name' => 'contacts_aos_line_item_groups',
-    'lhs_module' => 'Contacts',
-    'lhs_table' => 'contacts',
-    'lhs_key' => 'id',
-    'rhs_module' => 'AOS_Line_Item_Groups',
-    'rhs_table' => 'aos_line_item_groups',
-    'rhs_key' => 'parent_id',
-    'relationship_type' => 'one-to-many',
-  ),
   'contact_aos_quotes' => 
   array (
     'name' => 'contact_aos_quotes',
