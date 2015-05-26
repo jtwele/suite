@@ -191,11 +191,6 @@ $dictionary['Contact']['fields']['preis4_c']['labelValue']='Preis4:';
 
  
 
- // created: 2015-05-26 03:15:48
-$dictionary['Contact']['fields']['line_items_c']['labelValue']='Line Items';
-
- 
-
 /**
  *
  * @package Advanced OpenPortal
@@ -332,10 +327,6 @@ $dictionary["Contact"]["fields"]["fp_events_contacts"] = array (
  
 
  // created: 2015-05-25 13:48:56
-
- 
-
- // created: 2015-05-26 03:15:48
 
  
 

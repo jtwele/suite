@@ -1,5 +1,5 @@
 <?php
-// created: 2015-05-26 03:15:48
+// created: 2015-05-26 04:00:23
 $mod_strings = array (
   'LBL_PANEL_ASSIGNMENT' => 'Products',
   'LBL_EDITVIEW_PANEL1' => 'New Panel 1',
@@ -17,5 +17,4 @@ $mod_strings = array (
   'LBL_MENGE2' => 'Menge2:',
   'LBL_PREIS' => 'Preis:',
   'LBL_PREIS2' => 'Preis2:',
-  'LBL_LINE_ITEMS' => 'Line Items',
 );

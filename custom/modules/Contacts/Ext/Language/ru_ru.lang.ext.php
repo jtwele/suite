@@ -7,12 +7,6 @@ $mod_strings['LBL_FP_EVENTS_CONTACTS_FROM_FP_EVENTS_TITLE'] = 'События';
 $mod_strings['LBL_FP_EVENT_DELEGATES_CONTACTS_1_FROM_FP_EVENT_DELEGATES_TITLE'] = 'Участники';
 
 
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE'] = 'Products';
-$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_QUOTES_1_FROM_AOS_PRODUCTS_QUOTES_TITLE'] = 'Line Items';
-$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_QUOTES_2_FROM_AOS_PRODUCTS_QUOTES_TITLE'] = 'Line Items';
-
-
 
 $mod_strings = array_merge($mod_strings,
 	array(
@@ -56,10 +50,5 @@ $mod_strings['LBL_ENABLE_PORTAL_USER_SUCCESS'] = "Включить пользо�
 $mod_strings['LBL_DISABLE_PORTAL_USER_SUCCESS'] = "Отключить пользователя портала";
 $mod_strings['LBL_NO_JOOMLA_URL'] = "Не указан URL портала";
 $mod_strings['LBL_PORTAL_USER_TYPE'] = "Пользователь портала";
-
-
-//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
-$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_1_FROM_AOS_PRODUCTS_TITLE'] = 'Products';
-$mod_strings['LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE'] = 'Products';
 
 ?>

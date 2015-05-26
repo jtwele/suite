@@ -1,5 +1,5 @@
 <?php
-// created: 2015-05-26 03:28:40
+// created: 2015-05-26 04:00:34
 $mod_strings = array (
   'LBL_ID' => 'ID:',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -214,9 +214,6 @@ $mod_strings = array (
   'LBL_MENGE2' => 'Menge2:',
   'LBL_PREIS' => 'Preis:',
   'LBL_PREIS2' => 'Preis2:',
-  'LBL_LINE_ITEMS' => 'Line Items',
-  'LBL_CONTACTS_AOS_PRODUCTS_QUOTES_1_FROM_AOS_PRODUCTS_QUOTES_TITLE' => 'Line Items',
-  'LBL_CONTACTS_AOS_PRODUCTS_QUOTES_2_FROM_AOS_PRODUCTS_QUOTES_TITLE' => 'Line Items',
   'LBL_AOP_CASE_UPDATES' => 'Case Updates',
   'LBL_CREATE_PORTAL_USER' => 'Create Portal User',
   'LBL_ENABLE_PORTAL_USER' => 'Enable Portal User',
@@ -229,8 +226,6 @@ $mod_strings = array (
   'LBL_DISABLE_PORTAL_USER_SUCCESS' => 'Disabled portal user',
   'LBL_NO_JOOMLA_URL' => 'No portal URL specified',
   'LBL_PORTAL_USER_TYPE' => 'Portal User Type',
-  'LBL_SECURITYGROUPS_SUBPANEL_TITLE' => 'Security Groups',
   'LBL_FP_EVENTS_CONTACTS_FROM_FP_EVENTS_TITLE' => 'Events',
   'LBL_FP_EVENT_DELEGATES_CONTACTS_1_FROM_FP_EVENT_DELEGATES_TITLE' => 'Delegates',
-  'LBL_CONTACTS_AOS_PRODUCTS_2_FROM_AOS_PRODUCTS_TITLE' => 'Products',
 );

@@ -1395,37 +1395,6 @@
       'id' => 'Contactspreis4_c',
       'custom_module' => 'Contacts',
     ),
-    'line_items_c' => 
-    array (
-      'labelValue' => 'Line Items',
-      'required' => false,
-      'source' => 'non-db',
-      'name' => 'line_items_c',
-      'vname' => 'LBL_LINE_ITEMS',
-      'type' => 'relate',
-      'massupdate' => '0',
-      'default' => NULL,
-      'no_default' => false,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => false,
-      'reportable' => true,
-      'unified_search' => false,
-      'merge_filter' => 'disabled',
-      'len' => '255',
-      'size' => '20',
-      'id_name' => 'aos_products_quotes_id_c',
-      'ext2' => 'AOS_Products_Quotes',
-      'module' => 'AOS_Products_Quotes',
-      'rname' => 'name',
-      'quicksearch' => 'enabled',
-      'studio' => 'visible',
-      'id' => 'Contactsline_items_c',
-      'custom_module' => 'Contacts',
-    ),
     'aop_case_updates' => 
     array (
       'name' => 'aop_case_updates',
@@ -1870,30 +1839,6 @@
       'id' => 'Contactsaos_products_id5_c',
       'custom_module' => 'Contacts',
     ),
-    'aos_products_quotes_id_c' => 
-    array (
-      'required' => false,
-      'source' => 'custom_fields',
-      'name' => 'aos_products_quotes_id_c',
-      'vname' => 'LBL_LINE_ITEMS_AOS_PRODUCTS_QUOTES_ID',
-      'type' => 'id',
-      'massupdate' => '0',
-      'default' => NULL,
-      'no_default' => false,
-      'comments' => '',
-      'help' => '',
-      'importable' => 'true',
-      'duplicate_merge' => 'disabled',
-      'duplicate_merge_dom_value' => '0',
-      'audited' => false,
-      'reportable' => false,
-      'unified_search' => false,
-      'merge_filter' => 'disabled',
-      'len' => '36',
-      'size' => '20',
-      'id' => 'Contactsaos_products_quotes_id_c',
-      'custom_module' => 'Contacts',
-    ),
     'jjwg_maps_address_c' => 
     array (
       'required' => false,
@@ -2067,6 +2012,44 @@
         0 => 'assigned_user_id',
       ),
     ),
+    'line_items' => 
+    array (
+      'required' => false,
+      'name' => 'line_items',
+      'vname' => 'LBL_LINE_ITEMS',
+      'type' => 'function',
+      'source' => 'non-db',
+      'massupdate' => 0,
+      'importable' => 'false',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => 0,
+      'audited' => false,
+      'reportable' => false,
+      'function' => 
+      array (
+        'name' => 'display_lines',
+        'returns' => 'html',
+        'include' => 'modules/AOS_Products_Quotes/Line_Items.php',
+      ),
+    ),
+    'aos_products_quotes' => 
+    array (
+      'name' => 'aos_products_quotes',
+      'type' => 'link',
+      'relationship' => 'contacts_aos_products_quotes',
+      'module' => 'AOS_Products_Quotes',
+      'bean_name' => 'AOS_Products_Quotes',
+      'source' => 'non-db',
+    ),
+    'aos_line_item_groups' => 
+    array (
+      'name' => 'aos_line_item_groups',
+      'type' => 'link',
+      'relationship' => 'contacts_aos_line_item_groups',
+      'module' => 'AOS_Line_Item_Groups',
+      'bean_name' => 'AOS_Line_Item_Groups',
+      'source' => 'non-db',
+    ),
   ),
   'relationships' => 
   array (
@@ -2205,6 +2188,26 @@
       'relationship_type' => 'one-to-many',
       'relationship_role_column' => 'target_type',
       'relationship_role_column_value' => 'Contacts',
+    ),
+    'contacts_aos_products_quotes' => 
+    array (
+      'lhs_module' => 'Contacts',
+      'lhs_table' => 'contacts',
+      'lhs_key' => 'id',
+      'rhs_module' => 'AOS_Products_Quotes',
+      'rhs_table' => 'aos_products_quotes',
+      'rhs_key' => 'parent_id',
+      'relationship_type' => 'one-to-many',
+    ),
+    'contacts_aos_line_item_groups' => 
+    array (
+      'lhs_module' => 'Contacts',
+      'lhs_table' => 'contacts',
+      'lhs_key' => 'id',
+      'rhs_module' => 'AOS_Line_Item_Groups',
+      'rhs_table' => 'aos_line_item_groups',
+      'rhs_key' => 'parent_id',
+      'relationship_type' => 'one-to-many',
     ),
     'contact_aos_quotes' => 
     array (

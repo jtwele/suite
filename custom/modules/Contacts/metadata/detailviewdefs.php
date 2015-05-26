@@ -270,17 +270,9 @@ array (
       array (
         0 => 
         array (
-          0 => 
-          array (
-            'name' => 'line_items_c',
-            'studio' => 'visible',
-            'label' => 'LBL_LINE_ITEMS',
-          ),
         ),
         1 => 
         array (
-          0 => '',
-          1 => '',
         ),
       ),
     ),
