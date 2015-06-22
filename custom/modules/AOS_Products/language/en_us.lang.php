@@ -1,6 +1,5 @@
 <?php
-// created: 2015-05-25 13:15:00
+// created: 2015-05-29 16:16:23
 $mod_strings = array (
-  'LBL_AMOUNT' => 'Amount',
   'LBL_PRICE' => 'Price',
 );

@@ -8,10 +8,6 @@ $dashletData['AOS_ProductsDashlet']['searchFields'] = array (
   array (
     'default' => '',
   ),
-  'amount_c' => 
-  array (
-    'default' => '',
-  ),
   'assigned_user_id' => 
   array (
     'default' => '',

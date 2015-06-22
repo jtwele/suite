@@ -9,7 +9,6 @@ $popupMeta = array (
   'cost' => 'aos_products.cost',
   'price' => 'aos_products.price',
   'created_by' => 'aos_products.created_by',
-  'amount_c' => 'aos_products_cstm.amount_c',
 ),
     'searchInputs' => array (
   1 => 'name',
@@ -17,7 +16,6 @@ $popupMeta = array (
   5 => 'cost',
   6 => 'price',
   7 => 'created_by',
-  8 => 'amount_c',
 ),
     'searchdefs' => array (
   'name' => 
@@ -39,13 +37,6 @@ $popupMeta = array (
   array (
     'name' => 'price',
     'width' => '10%',
-  ),
-  'amount_c' => 
-  array (
-    'type' => 'int',
-    'label' => 'LBL_AMOUNT',
-    'width' => '10%',
-    'name' => 'amount_c',
   ),
   'created_by' => 
   array (
